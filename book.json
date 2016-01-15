@@ -2,5 +2,14 @@
     "structure": {
         "readme": "myIntro.md"
     },
-    "plugins": ["jsbin"]
+    "plugins": [ "jsfiddle"],
+    "pluginsConfig": {
+          "jsfiddle":{
+            "type":"script",
+            "tabs":["js","html","result","resources"],
+            "height": "500",
+            "width": "500",
+            "fontColor": "00FF00"
+          }
+    }
 }
