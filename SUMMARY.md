@@ -1,6 +1,6 @@
 # Summary
 
-* [React Setup](template.md)
+* React Setup
     * [Using React without JSX](template.md)
     * [Transform JSX to JavaScript using Babel in the Browser](template.md)
     * [Transform JSX to JavaScript using Babel via the CLI during development](template.md)

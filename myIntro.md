@@ -8,11 +8,11 @@ Learn React in the terse cookbook style found with previous Enlightenment titles
  
 **download a .pdf, .epub, or .mobi file from**: 
 
-* 
+* add link to gitbook landing page
 
 **contribute content, suggestions, and fixes on github**: 
 
-* 
+* add link to github
 
 ***
 
