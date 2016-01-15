@@ -8,8 +8,7 @@
             "type":"script",
             "tabs":["js","html","result","resources"],
             "height": "500",
-            "width": "100%",
-            "fontColor": "364149"
+            "width": "100%"
           }
     }
 }
