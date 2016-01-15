@@ -1,4 +1,4 @@
 ## React Setup
 
-[source code](http://jsbin.com/bvpe4j39/)
+[source code](https://jsfiddle.net/bvpe4j39)
 
