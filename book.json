@@ -5,11 +5,11 @@
     "plugins": [ "jsfiddle"],
     "pluginsConfig": {
           "jsfiddle":{
-            "type":"frame",
+            "type":"script",
             "tabs":["js","html","result","resources"],
             "height": "500",
             "width": "100%",
-            "fontColor": "00FF00"
+            "fontColor": "364149"
           }
     }
 }
