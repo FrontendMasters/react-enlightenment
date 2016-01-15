@@ -1,5 +1,6 @@
 {
     "structure": {
         "readme": "myIntro.md"
-    }
+    },
+    "plugins": ["jsbin"]
 }

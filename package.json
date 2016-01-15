@@ -1,0 +1,22 @@
+{
+  "name": "react-enlightenment",
+  "version": "1.0.0",
+  "description": "Written by [Cody Lindley](http://codylindley.com/) sponsored by — [Frontend Masters](https://frontendmasters.com/)",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/FrontendMasters/react-enlightenment.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/FrontendMasters/react-enlightenment/issues"
+  },
+  "homepage": "https://github.com/FrontendMasters/react-enlightenment#readme",
+  "devDependencies": {
+    "gitbook-plugin-jsbin": "0.0.12"
+  }
+}
