@@ -17,7 +17,6 @@
   },
   "homepage": "https://github.com/FrontendMasters/react-enlightenment#readme",
   "devDependencies": {
-    "gitbook-plugin-jsbin": "0.0.12",
     "gitbook-plugin-jsfiddle": "^1.0.0"
   }
 }
