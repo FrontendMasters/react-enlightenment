@@ -1,6 +1,6 @@
 ## React Setup
 
-[source code](https://jsfiddle.net/bvpe4j39/#height=600)
+This section of will discuss setting up React for development. The chapter is broken down into the following sections.
 
-test
+
 
