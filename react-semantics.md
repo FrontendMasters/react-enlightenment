@@ -1,4 +1,4 @@
-## React Semantics
+# React Semantics
 
 Before I enlighten anyone with the mechanics of React I'd first like to define a few terms so as to grease the learning process. 
 
