@@ -2,7 +2,7 @@
 
 * [React Setup](react-setup.md)
     * [Using react.js and react-dom.js in an HTML page](react-setup/1.1.md)
-    * [Using Babel with React](react-setup/1.3.md)
+    * [Using JSX via Babel with React](react-setup/1.3.md)
     * [Writing React with jsfiddle](react-setup/1.4.md)
     * [Using ES6 with React](react-setup/1.5.md)
     * [Using ES* with React](react-setup/1.6.md)
