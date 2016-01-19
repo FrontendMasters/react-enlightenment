@@ -5,7 +5,7 @@
     * [Using react.js & react-dom.js](react-basic-setup/1.1.md)
     * [Using JSX via Babel](react-basic-setup/1.2.md)
     * [Using ES6 & ES* with React](react-basic-setup/1.3.md)
-    * [Writing React with jsfiddle](react-basic-setup/1.4.md)
+    * [Writing React with JSFiddle](react-basic-setup/1.4.md)
 * [React conceptual overview](react-overview.md)
     * [Creating React elements](react-overview/2.1.md)
     * [Creating JSX](react-overview/2.2.md)
@@ -17,9 +17,9 @@
     * [Passing values to components using props](react-overview/2.8.md)
     * [Storing dynamic data in a component using state](react-overview/2.9.md)
 * [React & Babel advanced setup](react-advanced-setup.md)
-    * [Babel transforming JSX via CLI](react-advanced-setup/2.1.md)
-    * [Babel transforming JSX via SystemJS](react-advanced-setup/2.2.md)
-    * [Babel transforming JSX via webpack](react-advanced-setup/2.3.md)
+    * [Babel/JSX transforming via CLI](react-advanced-setup/2.1.md)
+    * [Babel/JSX transforming via SystemJS](react-advanced-setup/2.2.md)
+    * [Babel/JSX transforming via webpack](react-advanced-setup/2.3.md)
     
 
 
