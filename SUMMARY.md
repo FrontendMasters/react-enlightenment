@@ -3,7 +3,7 @@
 * [React semantics/terminology](react-semantics.md)
 * [React setup](react-setup.md)
     * [Using react.js & react-dom.js](react-setup/1.1.md)
-    * [Using JSX via Babel](react-setup/1.3.md)
+    * [Using JSX via Babel](react-setup/1.2.md)
     * [Writing React with jsfiddle](react-setup/1.4.md)
     * [Using ES6 with React](react-setup/1.5.md)
     * [Using ES* with React](react-setup/1.6.md)
