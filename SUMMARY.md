@@ -1,8 +1,9 @@
 # Summary
 
-* [React Setup](react-setup.md)
-    * [Using react.js and react-dom.js in an HTML page](react-setup/1.1.md)
-    * [Using JSX via Babel with React](react-setup/1.3.md)
+* [React semantics/terminology](react-semantics.md)
+* [React setup](react-setup.md)
+    * [Using react.js & react-dom.js](react-setup/1.1.md)
+    * [Using JSX via Babel](react-setup/1.3.md)
     * [Writing React with jsfiddle](react-setup/1.4.md)
     * [Using ES6 with React](react-setup/1.5.md)
     * [Using ES* with React](react-setup/1.6.md)
@@ -11,7 +12,7 @@
     * [Babel transforming JSX via CLI](react-setup/1.9.md)
     * [Babel transforming JSX via SystemJS](react-setup/1.10.md)
     * [Babel transforming JSX via webpack](react-setup/1.11.md)
-* [React Conceptual Overview](react-overview.md)
+* [React conceptual overview](react-overview.md)
     * [Creating React elements](react-overview/2.1.md)
     * [Creating JSX](react-overview/2.2.md)
     * [Writing JavaScript in JSX](react-overview/2.3.md)
