@@ -17,9 +17,9 @@
     * [Passing values to components using props](react-overview/2.8.md)
     * [Storing dynamic data in a component using state](react-overview/2.9.md)
 * [React & Babel advanced setup](react-advanced-setup.md)
-    * [Babel/JSX transforming via CLI](react-advanced-setup/2.1.md)
-    * [Babel/JSX transforming via SystemJS](react-advanced-setup/2.2.md)
-    * [Babel/JSX transforming via webpack](react-advanced-setup/2.3.md)
+    * [Babel/JSX via CLI](react-advanced-setup/2.1.md)
+    * [Babel/JSX via SystemJS](react-advanced-setup/2.2.md)
+    * [Babel/JSX via webpack](react-advanced-setup/2.3.md)
     
 
 
