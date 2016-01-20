@@ -4,10 +4,9 @@ Before I enlighten anyone with the mechanics of React I'd first like to define a
 
 Below I define many of the terms that are used when talking about React.
 
-**Babel**: - Babel is a generic multi-purpose compiler for JavaScript. Using Babel you can use (and create) the next generation of JavaScript, as well as the next generation of JavaScript tooling.
+**Babel**: - Babel is a generic multi-purpose compiler for JavaScript. Using Babel you can use (and create) the next generation of JavaScript, as well as the next generation of JavaScript tooling. Babel is the tool of choice from the React team for writing future ES* and transforming JSX to ES5 code.
 
-**JSX**: - JSX is a XML-like syntax extension to ECMAScript without any defined semantics. It's NOT intended to be implemented by engines or browsers. It's NOT a proposal to incorporate JSX into the ECMAScript spec itself. It's intended to be used by various preprocessors (transpilers) to transform these tokens into standard ECMAScript.
-
+**JSX**: - JSX is an optional XML-like syntax extension to ECMAScript that can be used to define a tree structure consisting of components.
 
 
 
