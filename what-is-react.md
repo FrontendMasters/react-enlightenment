@@ -8,7 +8,7 @@ I could ramble on trying to express in words exact what React is, but I think it
 
 Below is a an HTML `<select>` element that encapsulates child HTML `<option>` elements.
 
-[source code](https://jsfiddle.net/s2pxp36L/#tabs=html,results)
+[source code](https://jsfiddle.net/s2pxp36L/)
 
 When a browser parses this tree of elements it will of course produce a UI containing a textual list of items that can be selected (click on results, to see what the browser produces). The browser and the DOM (i.e. the shadow DOM) are working behind the scenes to turn the HTML into a `<select>` UI component. Note that the `<select>` component allows the user to make a selection thus storing the state of that selection (i.e. click on "Volvo", and you have selected it).
 
@@ -35,7 +35,7 @@ class MySelect extends React.Component {
 ```
 
 
-[source code](https://jsfiddle.net/zp86ez31/#tabs=javascript,html,results)
+[source code](https://jsfiddle.net/zp86ez31/)
 
 
 
