@@ -6,7 +6,7 @@ I could ramble on trying to express in words exact what React is, but I think it
 
 ## React Components
 
-Below is a an HTML `<select>`` element that encapsulates child HTML `<option>`` elements.
+Below is a an HTML `<select>` element that encapsulates child HTML `<option>` elements.
 
 [source code](https://jsfiddle.net/s2pxp36L/#tabs=html,results)
 
