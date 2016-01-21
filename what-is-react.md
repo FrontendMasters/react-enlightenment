@@ -17,7 +17,7 @@ Below is a an HTML select element that encapsulates child HTML option elements.
 
 When a browser parses this tree of elements it produces the following UI.
 
-[source code](https://jsfiddle.net/s2pxp36L/#tabs=["result","html"])
+[source code](https://jsfiddle.net/s2pxp36L/#tabs=[result,html])
 
 
 
