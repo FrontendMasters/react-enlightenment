@@ -1,5 +1,6 @@
 # Summary
 
+* [What is React](what-is-react.md)
 * [React semantics/terminology](react-semantics.md)
 * [React & Babel basic setup](react-basic-setup.md)
     * [Using react.js & react-dom.js](react-basic-setup/1.1.md)
