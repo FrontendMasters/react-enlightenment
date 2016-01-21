@@ -10,16 +10,32 @@ Below is a an HTML `<select>` element that encapsulates child HTML `<option>` el
 
 [source code](https://jsfiddle.net/s2pxp36L/#tabs=html,results)
 
-When a browser parses this tree of elements it will of course produce a UI containing a textual list of items that can be selected (click on results, to see what the browser produces). The browser and the DOM (aka shadow DOM) are working behind the scenes to turn the HTML into a UI component. Note that the select component allows the user to make a selection and thus storing the state of that selection (i.e. click on "Volvo", and you have selected it).
+When a browser parses this tree of elements it will of course produce a UI containing a textual list of items that can be selected (click on results, to see what the browser produces). The browser and the DOM (i.e. the shadow DOM) are working behind the scenes to turn the HTML into a `<select>` UI component. Note that the `<select>` component allows the user to make a selection thus storing the state of that selection (i.e. click on "Volvo", and you have selected it).
 
 Using React we can essentially do the same exact thing but instead of using HTML elements and the DOM we use React elements and the virtual DOM.
 
 ```javascript
-
+class MySelect extends React.Component {
+    render() {
+        var mySelectStyle = {
+            border: '1px solid #999',
+            display: 'inline-block',
+            padding: '5px'
+        };
+        return (
+            <div style={mySelectStyle}>
+                <MyOption value="Volvo"></MyOption>
+                <MyOption value="Saab"></MyOption>
+                <MyOption value="Mercedes"></MyOption>
+                <MyOption value="Audi"></MyOption>
+            </div>
+        );
+    }
+};
 ```
 
 
-[source code](https://jsfiddle.net/zp86ez31/#tabs=javascript,hmlt,results)
+[source code](https://jsfiddle.net/zp86ez31/#tabs=javascript,html,results)
 
 
 
