@@ -102,7 +102,7 @@ In the JavaScript below notice I added a call to the `ReactDOM.render()` functio
 
 [source code](https://jsfiddle.net/zp86ez31/#tabs=js,result,html,resources)
 
-Hold up, you might be thinking. We haven't actually re-created a `<select>` at all and you'd be right. All we have is a static/stateless list of text. We'll fix that next.
+Hold up, you might be thinking. We haven't actually re-created a `<select>` at. If you're thinking this, you'd be right. All we have is a static/stateless list of text. We'll fix that next.
 
 Before I move on I want to point out that no implicit DOM interactions we're written to get the `<MyOption>` component into the real DOM. In other words, no jQuery code was invoke during the creation of this component. The dealings with the actual DOM have all been abstracted. That's pretty neat. Right?
 
@@ -110,11 +110,11 @@ Before I move on I want to point out that no implicit DOM interactions we're wri
 
 In order for our `<MySelect>` component to mimic a native `<select>` element we are going to have to add state. State typically gets involved when a component contains snapshots of information. In regards to our custom `<MyOption>` component, it's state is the currently selected text or the fact that no text is selected at all. Note that state will typically involved user or network events.
 
-State is typically found on the top most component which makes up a UI component. Using the `getInitialState()` function we can set the default state of our component to `false` by returning a state object (i.e. `return {selected: false};`) when `getInitialState` is invoked.
+State is typically found on the top most component which makes up a UI component. Using the `getInitialState()` function we can set the default state of our component to `false` by returning a state object (i.e. `return {selected: false};`) when `getInitialState` is invoked. I've update the code below accordingly. As I change the code make sure you read the JavaScript comments.
 
 ```javascript
 var MySelect = React.createClass({
-    getInitialState: function(){ //add selected state
+    getInitialState: function(){ //add selected, default state
         return {selected: false};
     },
     render: function(){
@@ -141,7 +141,7 @@ var MyOption = React.createClass({
 });
 ```
 
-With the state setup next we'll add a callback function called `select` that gets called when a user clicks on an option. Inside of this function we get the text of the option that was selected and use that to determine how to set the current state of the component. 
+With the state setup next we'll add a callback function called `select` that gets called when a user clicks on an option. Inside of this function we get the text of the option (via `event` parameter) that was selected and use that to determine how to `setState` on the current component. Notice that I am using `event` details passed to the `select` callback. This pattern should look familiar from jQuery code.
 
 ```javascript
 var MySelect = React.createClass({
@@ -150,9 +150,9 @@ var MySelect = React.createClass({
     },
     select:function(event){// added select function
         if(event.target.textContent === this.state.selected){//remove selection
-            this.setState({selected: false});
+            this.setState({selected: false}); //update state
         }else{//add selection
-            this.setState({selected: event.target.textContent});
+            this.setState({selected: event.target.textContent}); //update state
         }   
     },
     render: function(){
@@ -217,15 +217,17 @@ var MyOption = React.createClass({
 });
 ```
 
-By doing all this we can now set the state by clicking on one of the options. However, the UI user of the component has no idea this is being done because all we have done is update our code so that state is managed by the component.
+By doing all this we can now set the state by clicking on one of the options. In other words, when you click on an option the `select` function will now run and set the state of the `MySelect` component. However, the user of the component has no idea this is being done because all we have done is update our code so that state is managed by the component. At this point we have no feedback visually that anything is selected. Let's fix that.
 
-The next thing we will need to do is also pass the current state down to the `<MyOption>` component so that it can respond visually to the state of the component.
+The next thing we will need to do is pass the current state down to the `<MyOption>` component so that it can respond visually to the state of the component.
 
-Using props, again, we will pass the state from the `<MySelect>` component down to the `<MyOption>` component by placing the property `state={this.state.selected}` on all of the `<MyOption>` components. Now that we know the state (i.e. `this.props.state`) and the current value (i.e. `this.props.value`) of the option we can verify if the state matches the value. If it does, we then know that this option should be selected. This is done by writing a simple `if` statement which adds a styled selected state (i.e. `selectedStyle`) to the JSX `<div>` if the state matches the value of the current option. Otherwise we return a React element with an `unSelectedStyle` inline style.
+Using props, again, we will pass the `selected` state from the `<MySelect>` component down to the `<MyOption>` component by placing the property `state={this.state.selected}` on all of the `<MyOption>` components. Now that we know the state (i.e. `this.props.state`) and the current value (i.e. `this.props.value`) of the option we can verify if the state matches the value. If it does, we then know that this option should be selected. This is done by writing a simple `if` statement which adds a styled selected state (i.e. `selectedStyle`) to the JSX `<div>` if the state matches the value of the current option. Otherwise we return a React element with `unSelectedStyle` styles.
 
 [source code](https://jsfiddle.net/L1z9za23/#tabs=js,result,html,resources)
 
-Make sure you click on the "Result" tab above and see our custom React select component function. You can also contrast this final state of the code with what the JavaScript would look like if you either tranform the JSX with Babel or just write the React code using without JSX.
+Make sure you click on the "Result" tab above and see our custom React select component functioning. While our React UI select component is not as pretty or feature complete I hope you can see where all this is going. React is a tool that can help you reason about, construct, and maintain stateless and stateful UI components, in a structure tree.
+
+Below, I'm showing the final state of the code after the JSX has been transformed by Babel. Don't forget you can always by pass JSX and Babel and just write strait JavaScript.
 
 ```javascript
 var MySelect = React.createClass({
@@ -285,8 +287,7 @@ ReactDOM.render(React.createElement(MySelect, null), document.getElementById('ap
 
 ##### Performant changes to the DOM
 
-
-
+I'm going to end this whirl wind tour where most people talking about React typically being. 
 
 
 
