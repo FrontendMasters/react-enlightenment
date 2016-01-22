@@ -4,7 +4,7 @@ React is a JavaScript tool that makes it easy to reason about, construct, and ma
 
 I could ramble on trying to express in words exact what React is, but I think it is best to just show you. Don't try and figure out all the details as I describe React using code. Just follow along grabbing a hold of the gist of it for now. The details will come in later chapters and most of what we do here will run but should be consider pseudo code given I know you won't understand the details yet.
 
-## React Components Whirl Wind Tour
+## A React Component Whirl Wind Tour
 
 Below is a an HTML `<select>` element that encapsulates child HTML `<option>` elements.
 
@@ -33,15 +33,15 @@ class MySelect extends React.Component {
 };
 ```
 
-Yes, that `<div>` is an HTML like tag, in JavaScript, called JSX. JSX is a custom JavaScript syntax used by React to express React elements that map to HTML elements. This syntax must be transformed from JSX to real JavaScript by a JavaScript transformer called Babel.
+Yes, that `<div>` is an HTML like tag, yes in JavaScript, called JSX. JSX is a custom JavaScript syntax used by React to express React elements that map to HTML elements. This syntax must be transformed from JSX to real JavaScript by a JavaScript transformer called Babel.
 
-Below I show you what the line of JavaScript containing the JSX expression looks like after Babel transforms it.
+After Babel transforms the JSX into an real JavaScript containing it will look like this:
 
 ```javascript
 return React.createElement('div', { style: mySelectStyle });
 ```
 
-For now, just keep in mind that the HTML elements that you see in JavaScript are being transformed into actual JavaScript/React code.
+For now, just keep in mind that the HTML elements that you see in JavaScript are being transformed into actual JavaScript/React code by Babel along with ES6 syntax (i.e. `class`, `extends`, etc...).
 
 My `<MySelect>` component at this point consist of an empty React `<div>` element. Let's change that. 
 
@@ -81,7 +81,21 @@ Before we do that I'd like to mention that up to this point all we have done is 
 
 Let's instead now render the `<MyOption>` component to the virtual DOM which in turn will render it to the actual DOM inside of an HTML page.
 
-[source code](https://jsfiddle.net/zp86ez31/#tabs=js,result,html)
+In the JavaScript below, specifically the last line, notice I added a call to the `ReactDOM.render()` function. Here I am passing the function the component we want to render (i.e. `<MyOption>`) and a reference to the HTML element already in the DOM (i.e. `<div id="app"></div>`) where I want to render my React `<MyOption>` component. Click on the "Result" tab and you will see our custom React `<MyOption>` component rendered to the HTML DOM.
+
+[source code](https://jsfiddle.net/zp86ez31/#tabs=js,result,html,resources)
+
+Hold up you might be thinking. We haven't actually re-created a select at all. All we have is a static list of text and we had to write a lot of JavaScript to get it.
+
+Before I move on I want to point out that no implicit DOM interactions we're written to get the `<MyOption>` component into the real DOM. No jQuery was used. The dealings with the actual DOM have all been abstracted. That's pretty neat. Right? Don't answer yet, there is more to come.
+
+In order for our `<MyOption>` component to mimic a native `<select>` element we are going to have to add some state. State typically gets involved when a component contains a serialize snapshot of information. In regards to our custom `<MyOption>` component, it must keep track of which of if a selection of text has been made and if so which one. Note that, state will typically involved user or network events.
+
+
+
+
+
+
 
 
 
