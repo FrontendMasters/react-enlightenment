@@ -108,9 +108,9 @@ Before I move on I want to point out that no implicit DOM interactions we're wri
 
 ##### React state
 
-In order for our `<MyOption>` component to mimic a native `<select>` element we are going to have to add state. State typically gets involved when a component contains snapshots of information. In regards to our custom `<MyOption>` component, it's state is the currently selected text or the fact that no text is selected at all. Note that state will typically involved user or network events.
+In order for our `<MySelect>` component to mimic a native `<select>` element we are going to have to add state. State typically gets involved when a component contains snapshots of information. In regards to our custom `<MyOption>` component, it's state is the currently selected text or the fact that no text is selected at all. Note that state will typically involved user or network events.
 
-State is typically found on the top most component which makes up a UI component. Using the `getInitialState` function we can set the default state of our component to `false` by returning a state object (i.e. `return {selected: false};`) when `getInitialState` is invoked.
+State is typically found on the top most component which makes up a UI component. Using the `getInitialState()` function we can set the default state of our component to `false` by returning a state object (i.e. `return {selected: false};`) when `getInitialState` is invoked.
 
 ```javascript
 var MySelect = React.createClass({
@@ -179,7 +179,7 @@ var MyOption = React.createClass({
 });
 ```
 
-In order for our `<MyOption>` components to gain access to the `select` function we'll have to pass a reference to it, via props, from the `<MySelect>` component to the `<MyOption>` component. To do this we add `select={this.select}` to the `<MyOption>` components. With that in place we can add `onClick={this.props.select}` to the `<MyOption>` component JSX.
+In order for our `<MyOption>` components to gain access to the `select` function we'll have to pass a reference to it, via props, from the `<MySelect>` component to the `<MyOption>` component. To do this we add `select={this.select}` to the `<MyOption>` components. With that in place we can add `onClick={this.props.select}` to the `<MyOption>` components.
 
 ```javascript
 var MySelect = React.createClass({
@@ -217,55 +217,78 @@ var MyOption = React.createClass({
 });
 ```
 
-By doing all this we can now set the state by clicking on one of the options.However, the UI user of the component has no idea this is being done because all we have done is update our code so that state is managed by the component.
+By doing all this we can now set the state by clicking on one of the options. However, the UI user of the component has no idea this is being done because all we have done is update our code so that state is managed by the component.
 
 The next thing we will need to do is also pass the current state down to the `<MyOption>` component so that it can respond visually to the state of the component.
 
-Using props, again, we will pass the state in the `<MySelect>` down to an option component by placing the property `state={this.state.selected}` on all of the `<MyOption>` components. Now that we know the state (i.e. `this.props.state`) and the current `value` (i.e. `this.props.value`) of the option we can verify if the state matches the value. If it does, we then know that this option should be selected. And we'll write a simple if statement add a styled state to the option if the state matches the value of the current option.
+Using props, again, we will pass the state from the `<MySelect>` component down to the `<MyOption>` component by placing the property `state={this.state.selected}` on all of the `<MyOption>` components. Now that we know the state (i.e. `this.props.state`) and the current value (i.e. `this.props.value`) of the option we can verify if the state matches the value. If it does, we then know that this option should be selected. This is done by writing a simple `if` statement which adds a styled selected state (i.e. `selectedStyle`) to the JSX `<div>` if the state matches the value of the current option. Otherwise we return a React element with an `unSelectedStyle` inline style.
+
+[source code](https://jsfiddle.net/L1z9za23/#tabs=js,result,html,resources)
+
+Make sure you click on the "Result" tab above and see our custom React select component function. You can also contrast this final state of the code with what the JavaScript would look like if you either tranform the JSX with Babel or just write the React code using without JSX.
 
 ```javascript
+'use strict';
+
 var MySelect = React.createClass({
-    getInitialState: function(){
-        return {selected: false};
-    },
-    select:function(event){
-        if(event.target.textContent === this.state.selected){
-            this.setState({selected: false});
-        }else{
-            this.setState({selected: event.target.textContent});
-        }   
-    },
-    render: function(){
-        var mySelectStyle = {
-            border: '1px solid #999',
-            display: 'inline-block',
-            padding: '5px'
-        };
-        return (//pass state, using props, to <MyOption>
-            <div style={mySelectStyle}>
-                <MyOption state={this.state.selected}  select={this.select} value="Volvo"></MyOption>
-                <MyOption state={this.state.selected}  select={this.select} value="Saab"></MyOption>
-                <MyOption state={this.state.selected}  select={this.select} value="Mercedes"></MyOption>
-                <MyOption state={this.state.selected}  select={this.select} value="Audi"></MyOption>
-            </div>
-        );
+  displayName: 'MySelect',
+
+  getInitialState: function getInitialState() {
+    return { selected: false };
+  },
+  select: function select(event) {
+    if (event.target.textContent === this.state.selected) {
+      this.setState({ selected: false });
+    } else {
+      this.setState({ selected: event.target.textContent });
     }
+  },
+  render: function render() {
+    var mySelectStyle = {
+      border: '1px solid #999',
+      display: 'inline-block',
+      padding: '5px'
+    };
+    return React.createElement(
+      'div',
+      { style: mySelectStyle },
+      React.createElement(MyOption, { state: this.state.selected, select: this.select, value: 'Volvo' }),
+      React.createElement(MyOption, { state: this.state.selected, select: this.select, value: 'Saab' }),
+      React.createElement(MyOption, { state: this.state.selected, select: this.select, value: 'Mercedes' }),
+      React.createElement(MyOption, { state: this.state.selected, select: this.select, value: 'Audi' })
+    );
+  }
 });
 
 var MyOption = React.createClass({
-    render: function(){
-        var selectedStyle = {backgroundColor:'red', color:'#fff',cursor:'pointer'};
-        var unSelectedStyle = {cursor:'pointer'};
-        if(this.props.value === this.props.state){
-            return <div style={selectedStyle} onClick={this.props.select}>{this.props.value}</div>;
-        }else{
-            return <div style={unSelectedStyle} onClick={this.props.select}>{this.props.value}</div>;
-        }
+  displayName: 'MyOption',
+
+  render: function render() {
+    var selectedStyle = { backgroundColor: 'red', color: '#fff', cursor: 'pointer' };
+    var unSelectedStyle = { cursor: 'pointer' };
+    if (this.props.value === this.props.state) {
+      return React.createElement(
+        'div',
+        { style: selectedStyle, onClick: this.props.select },
+        this.props.value
+      );
+    } else {
+      return React.createElement(
+        'div',
+        { style: unSelectedStyle, onClick: this.props.select },
+        this.props.value
+      );
     }
+  }
 });
+
+ReactDOM.render(React.createElement(MySelect, null), document.getElementById('app'));
 ```
 
-[source code](https://jsfiddle.net/L1z9za23/#tabs=js,result,html,resources)
+##### Performant changes to the DOM
+
+
+
 
 
 
