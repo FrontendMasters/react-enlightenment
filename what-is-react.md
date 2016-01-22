@@ -18,7 +18,7 @@ Using React we can essentially do the same exact thing but instead of using HTML
 
 ##### Defining a component
 
-Below I am creating a `<MySelect>` React component, in React, by extending (i.e. child class) the `React.Component` function. 
+Below I am creating a `<MySelect>` React component by invoking the `React.createClass` function in order to create a `<MySelect>` class. 
 
 As you can see the `<MySelect>` component is made up of an empty styled React `<div>` element.
 
