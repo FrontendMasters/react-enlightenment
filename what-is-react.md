@@ -12,15 +12,15 @@ Below is a an HTML `<select>` element that encapsulates child HTML `<option>` el
 
 When a browser parses this tree of elements it will produce a UI containing a textual list of items that can be selected. Click on the "Result" tab, to see what the browser produces.
 
-The browser and the DOM (i.e. the shadow DOM) are working together behind the scenes to turn the `<select>` HTML into a UI component. Note that the `<select>` component allows the user to make a selection thus storing the state of that selection (i.e. click on "Volvo", and you have selected it instead of "Mercedes").
+The browser, the DOM, and the shadow DOM are working together behind the scenes to turn the `<select>` HTML into a UI component. Note that the `<select>` component allows the user to make a selection thus storing the state of that selection (i.e. click on "Volvo", and you have selected it instead of "Mercedes").
 
-Using React we can essentially do the same exact thing but instead of using HTML elements directly we use React elements and the virtual DOM than in turn will create real HTML elements and DOM structures.
+Using React we can essentially do the same exact thing but instead of using HTML elements directly we use React elements and the virtual DOM that in turn will create real HTML elements in an HTML DOM.
 
 ##### Defining a component
 
-Below I am creating a `<MySelect>` React component by invoking the `React.createClass` function in order to create a `<MySelect>` class. 
+Below I am creating a `<MySelect>` React component by invoking the `React.createClass` function in order to create a `MySelect` class. 
 
-As you can see the `<MySelect>` component is made up of an empty styled React `<div>` element.
+As you can see the `MySelect` component is made up of an empty styled React `<div>` element.
 
 ```javascript
 var MySelect = React.createClass({ //define MySelect component
@@ -35,7 +35,9 @@ var MySelect = React.createClass({ //define MySelect component
 });
 ```
 
-That `<div>` is an HTML like tag, yes in JavaScript, called JSX. JSX is a custom JavaScript syntax used by React to express React elements that map to HTML elements. This syntax must be transformed from JSX to real JavaScript by a JavaScript transformer called [Babel](http://babeljs.io/).
+That `<div>` is an HTML like tag, yes in JavaScript, called [JSX](https://facebook.github.io/jsx/). JSX is a custom JavaScript syntax used by React to express React elements that map to real HTML elements. React elements, defined using JSX should not be considered a one to one match to HTML elements. There are [differences](https://facebook.github.io/react/docs/dom-differences.html) and some [gotchas](https://facebook.github.io/react/docs/jsx-gotchas.html). 
+
+JSX syntax must be transformed from JSX to real JavaScript in order to be parsed by ES5 browsers. The tool used to transform JSX is called [Babel](http://babeljs.io/).
 
 After Babel transforms the JSX into real JavaScript, it will look like this:
 
@@ -49,11 +51,13 @@ instead of this:
 return <div style={mySelectStyle}></div>;
 ```
 
-For now, just keep in mind that the HTML elements that you see in React JavaScript code are being transformed into actual JavaScript/React code by Babel along with ES6 syntax (i.e. `class`, `extends`, etc...).
+For now, just keep in mind that the HTML elements that you see in React JavaScript code are being transformed into actual JavaScript/React code by Babel along with ES6 syntax.
 
-My `<MySelect>` component at this point consist of an empty React `<div>` element. Let's change that. 
+The `<MySelect>` component at this point consist of an empty React `<div>` element. That seems rather pointless, so let's change that. 
 
-I'm going to define another component called `<MyOption>` and then use the `<MyOption>` component within the `<MySelect>` component (aka composition). Examine the changes in the code below.
+I'm going to define another component called `<MyOption>` and then use the `<MyOption>` component within the `<MySelect>` component (aka composition).
+
+Examine updated JavaScrip code below which defines both the `<MySelect>` and `<MyOption>` component.
 
 ```javascript
 var MySelect = React.createClass({
