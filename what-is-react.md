@@ -2,9 +2,9 @@
 
 React is a JavaScript tool that makes it easy to reason about, construct, and maintain stateless and stateful user interfaces. It provides the means to declaratively define and divide a UI into components (aka React components) made up of HTML like elements (aka React elements). 
 
-I could ramble on trying to express in words exact what React is, but I think it is best to just show you. Don't try and figure out all the details as I describe React using code in this section. Just follow along grabbing a hold of the gist of it for now. The fine details will come later.
+I could ramble on trying to express in words what React is, but I think it is best just to show you. Don't try and figure out all the details as I describe React using code in this section. Just follow along grabbing a hold of the gist of it for now. The fine details will come later.
 
-## A Wind Tour of React Components
+### A whirl wind tour of React components
 
 Below is a an HTML `<select>` element that encapsulates child HTML `<option>` elements.
 
@@ -16,7 +16,7 @@ The browser and the DOM (i.e. the shadow DOM) are working together behind the sc
 
 Using React we can essentially do the same exact thing but instead of using HTML elements directly we use React elements and the virtual DOM that in turn will create real HTML elements and DOM structures.
 
-### Defining a Component
+##### Defining a component
 
 Below I am creating a `<MySelect>` React component, in React, by extending (i.e. child class) the `React.Component` function using ES6 `class` syntax. 
 
@@ -75,9 +75,12 @@ class MyOption extends React.Component { //define MyOption component
 };
 ```
 
+
+##### React props
+
 The first thing you should notice is that the `<MyOption>` component is made up of one `<div>` containing the expression `{this.props.value}`. The `{}` brackets indicate to JSX that a JavaScript expression is being used. Inside of the `{}` brackets JavaScript is used to gain access (i.e. `this.props.value`) to the properties or attributes passed by the `<MyOption>` component. In other words when the `<MyOption>` component is rendered the value passed, via what looks like an HTML attribute (i.e. `value="Volvo"`) will be placed into the `<div>`. These HTML looking attributes are consider React props. React uses them to pass state-less/immutable options into components.
 
-### Rendering A Component
+##### Rendering a component to the Virtual DOM, then HTML DOM
 
 At this point our JavaScript only defines two React Components. We have yet to actually render these components to the Virtual DOM and HTML DOM.
 
@@ -93,7 +96,11 @@ Hold up, you might be thinking. We haven't actually re-created a select at all. 
 
 Before I move on I want to point out that no implicit DOM interactions we're written to get the `<MyOption>` component into the real DOM. In other words, no jQuery invoke in the creation of this component. The dealings with the actual DOM have all been abstracted. That's pretty neat. Right? Don't answer yet, there is more to come.
 
+##### React state
+
 In order for our `<MyOption>` component to mimic a native `<select>` element we are going to have to add state. State typically gets involved when a component contains snapshots of information. In regards to our custom `<MyOption>` component, it's state is the currently selected text or the fact that no text at all is selected. Note that state will typically involved user or network events.
+
+
 
 
 
