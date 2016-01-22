@@ -106,6 +106,8 @@ Before I move on I want to point out that no implicit DOM interactions we're wri
 
 In order for our `<MyOption>` component to mimic a native `<select>` element we are going to have to add state. State typically gets involved when a component contains snapshots of information. In regards to our custom `<MyOption>` component, it's state is the currently selected text or the fact that no text is selected at all. Note that state will typically involved user or network events.
 
+[source code](https://jsfiddle.net/L1z9za23/#tabs=js,result,html,resources)
+
 1. When can we talk about React and NG2 components
 2. Talk about React
 3. Talk about NG2
