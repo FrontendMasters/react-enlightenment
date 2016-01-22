@@ -102,7 +102,7 @@ In the JavaScript below notice I added a call to the `ReactDOM.render()` functio
 
 [source code](https://jsfiddle.net/zp86ez31/#tabs=js,result,html,resources)
 
-Hold up, you might be thinking. We haven't actually re-created a `<select>`` at all and you'd be right. All we have is a static/stateless list of text. We'll fix that next.
+Hold up, you might be thinking. We haven't actually re-created a `<select>` at all and you'd be right. All we have is a static/stateless list of text. We'll fix that next.
 
 Before I move on I want to point out that no implicit DOM interactions we're written to get the `<MyOption>` component into the real DOM. In other words, no jQuery code was invoke during the creation of this component. The dealings with the actual DOM have all been abstracted. That's pretty neat. Right?
 
@@ -228,8 +228,6 @@ Using props, again, we will pass the state from the `<MySelect>` component down 
 Make sure you click on the "Result" tab above and see our custom React select component function. You can also contrast this final state of the code with what the JavaScript would look like if you either tranform the JSX with Babel or just write the React code using without JSX.
 
 ```javascript
-'use strict';
-
 var MySelect = React.createClass({
   displayName: 'MySelect',
 
