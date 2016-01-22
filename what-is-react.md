@@ -88,13 +88,13 @@ var MyOption = React.createClass({  //define MyOption component
 
 ##### React props
 
-The first thing you should notice is that the `<MyOption>` component is made up of one `<div>` containing the expression `{this.props.value}`. The `{}` brackets indicate to JSX that a JavaScript expression is being used. Inside of the `{}` brackets JavaScript is used to gain access (i.e. `this.props.value`) to the properties or attributes passed by the `<MyOption>` component. In other words when the `<MyOption>` component is rendered the value passed, via what looks like an HTML attribute (i.e. `value="Volvo"`) will be placed into the `<div>`. These HTML looking attributes are consider React props. React uses them to pass stateless/immutable options into components.
+The first thing you should notice in the update code is that the `<MyOption>` component is made up of one `<div>` containing the expression `{this.props.value}`. The `{}` brackets indicate to JSX that a JavaScript expression is being used. Inside of the `{}` brackets JavaScript is used to gain access (i.e. `this.props.value`) to the properties or attributes passed by the `<MyOption>` component. In other words when the `<MyOption>` component is rendering the value passed, via what looks like an HTML attribute (i.e. `value="Volvo"`) and that value will be placed into the `<div>`. These HTML looking attributes are consider React props. React uses them to pass stateless/immutable options into components.
 
 ##### Rendering a component to the Virtual DOM, then HTML DOM
 
-At this point our JavaScript only defines two React Components. We have yet to actually render these components to the Virtual DOM and HTML DOM.
+At this point our JavaScript only defines two React Components. We have yet to actually render these components to the Virtual DOM and thus HTML DOM.
 
-Before we do that I'd like to mention that up to this point all we have done is define a UI component. In theory, the file is just the definition of a UI component. This same definition could also be used to render this component to a [native mobile platform](https://github.com/facebook/react-native) or an [HTML canvas](https://github.com/Flipboard/react-canvas). But we're not going to do that, even though one do could that. Just be aware that React is a pattern for organizing a UI that can transcends HTML pages.
+Before we do that I'd like to mention that up to this point all we have done is define a UI component made up of two React components. In theory, the JavaScript we have so far is just the definition of a UI component. This same definition, in theory, could also be used to render this component to a [native mobile platform](https://github.com/facebook/react-native) or an [HTML canvas](https://github.com/Flipboard/react-canvas). But we're not going to do that, even though one could do that. Just be aware that React is a pattern for organizing a UI that can transcend the DOM.
 
 Let's now render the `<MyOption>` component to the virtual DOM which in turn will render it to the actual DOM inside of an HTML page.
 
@@ -102,22 +102,172 @@ In the JavaScript below notice I added a call to the `ReactDOM.render()` functio
 
 [source code](https://jsfiddle.net/zp86ez31/#tabs=js,result,html,resources)
 
-Hold up, you might be thinking. We haven't actually re-created a select at all. All we have is a static/stateless list of text.
+Hold up, you might be thinking. We haven't actually re-created a `<select>`` at all and you'd be right. All we have is a static/stateless list of text. We'll fix that next.
 
-Before I move on I want to point out that no implicit DOM interactions we're written to get the `<MyOption>` component into the real DOM. In other words, no jQuery invoke in the creation of this component. The dealings with the actual DOM have all been abstracted. That's pretty neat. Right? Don't answer yet, there is more to come.
+Before I move on I want to point out that no implicit DOM interactions we're written to get the `<MyOption>` component into the real DOM. In other words, no jQuery code was invoke during the creation of this component. The dealings with the actual DOM have all been abstracted. That's pretty neat. Right?
 
 ##### React state
 
 In order for our `<MyOption>` component to mimic a native `<select>` element we are going to have to add state. State typically gets involved when a component contains snapshots of information. In regards to our custom `<MyOption>` component, it's state is the currently selected text or the fact that no text is selected at all. Note that state will typically involved user or network events.
 
+State is typically found on the top most component which makes up a UI component. Using the `getInitialState` function we can set the default state of our component to `false` by returning a state object (i.e. `return {selected: false};`) when `getInitialState` is invoked.
+
+```javascript
+var MySelect = React.createClass({
+    getInitialState: function(){ //add selected state
+        return {selected: false};
+    },
+    render: function(){
+        var mySelectStyle = {
+            border: '1px solid #999',
+            display: 'inline-block',
+            padding: '5px'
+        };
+        return (
+            <div style={mySelectStyle}>
+                <MyOption value="Volvo"></MyOption>
+                <MyOption value="Saab"></MyOption>
+                <MyOption value="Mercedes"></MyOption>
+                <MyOption value="Audi"></MyOption>
+            </div>
+        );
+    }
+});
+
+var MyOption = React.createClass({
+    render: function(){
+        return <div>{this.props.value}</div>;
+    }
+});
+```
+
+With the state setup next we'll add a callback function called `select` that gets called when a user clicks on an option. Inside of this function we get the text of the option that was selected and use that to determine how to set the current state of the component. 
+
+```javascript
+var MySelect = React.createClass({
+    getInitialState: function(){
+        return {selected: false};
+    },
+    select:function(event){// added select function
+        if(event.target.textContent === this.state.selected){//remove selection
+            this.setState({selected: false});
+        }else{//add selection
+            this.setState({selected: event.target.textContent});
+        }   
+    },
+    render: function(){
+        var mySelectStyle = {
+            border: '1px solid #999',
+            display: 'inline-block',
+            padding: '5px'
+        };
+        return (
+            <div style={mySelectStyle}>
+                <MyOption value="Volvo"></MyOption>
+                <MyOption value="Saab"></MyOption>
+                <MyOption value="Mercedes"></MyOption>
+                <MyOption value="Audi"></MyOption>
+            </div>
+        );
+    }
+});
+
+var MyOption = React.createClass({
+    render: function(){
+        return <div>{this.props.value}</div>;
+    }
+});
+```
+
+In order for our `<MyOption>` components to gain access to the `select` function we'll have to pass a reference to it, via props, from the `<MySelect>` component to the `<MyOption>` component. To do this we add `select={this.select}` to the `<MyOption>` components. With that in place we can add `onClick={this.props.select}` to the `<MyOption>` component JSX.
+
+```javascript
+var MySelect = React.createClass({
+    getInitialState: function(){
+        return {selected: false};
+    },
+    select:function(event){
+        if(event.target.textContent === this.state.selected){
+            this.setState({selected: false});
+        }else{
+            this.setState({selected: event.target.textContent});
+        }   
+    },
+    render: function(){
+        var mySelectStyle = {
+            border: '1px solid #999',
+            display: 'inline-block',
+            padding: '5px'
+        };
+        return (//pass reference, using props, to select callback to <MyOption>
+            <div style={mySelectStyle}>
+                <MyOption select={this.select} value="Volvo"></MyOption>
+                <MyOption select={this.select} value="Saab"></MyOption>
+                <MyOption select={this.select} value="Mercedes"></MyOption>
+                <MyOption select={this.select} value="Audi"></MyOption>
+            </div>
+        );
+    }
+});
+
+var MyOption = React.createClass({
+    render: function(){//add event handler that will invoke select callback
+        return <div onClick={this.props.select}>{this.props.value}</div>;
+    }
+});
+```
+
+By doing all this we can now set the state by clicking on one of the options.However, the UI user of the component has no idea this is being done because all we have done is update our code so that state is managed by the component.
+
+The next thing we will need to do is also pass the current state down to the `<MyOption>` component so that it can respond visually to the state of the component.
+
+Using props, again, we will pass the state in the `<MySelect>` down to an option component by placing the property `state={this.state.selected}` on all of the `<MyOption>` components. Now that we know the state (i.e. `this.props.state`) and the current `value` (i.e. `this.props.value`) of the option we can verify if the state matches the value. If it does, we then know that this option should be selected. And we'll write a simple if statement add a styled state to the option if the state matches the value of the current option.
+
+```javascript
+var MySelect = React.createClass({
+    getInitialState: function(){
+        return {selected: false};
+    },
+    select:function(event){
+        if(event.target.textContent === this.state.selected){
+            this.setState({selected: false});
+        }else{
+            this.setState({selected: event.target.textContent});
+        }   
+    },
+    render: function(){
+        var mySelectStyle = {
+            border: '1px solid #999',
+            display: 'inline-block',
+            padding: '5px'
+        };
+        return (//pass state, using props, to <MyOption>
+            <div style={mySelectStyle}>
+                <MyOption state={this.state.selected}  select={this.select} value="Volvo"></MyOption>
+                <MyOption state={this.state.selected}  select={this.select} value="Saab"></MyOption>
+                <MyOption state={this.state.selected}  select={this.select} value="Mercedes"></MyOption>
+                <MyOption state={this.state.selected}  select={this.select} value="Audi"></MyOption>
+            </div>
+        );
+    }
+});
+
+var MyOption = React.createClass({
+    render: function(){
+        var selectedStyle = {backgroundColor:'red', color:'#fff',cursor:'pointer'};
+        var unSelectedStyle = {cursor:'pointer'};
+        if(this.props.value === this.props.state){
+            return <div style={selectedStyle} onClick={this.props.select}>{this.props.value}</div>;
+        }else{
+            return <div style={unSelectedStyle} onClick={this.props.select}>{this.props.value}</div>;
+        }
+    }
+});
+```
+
 [source code](https://jsfiddle.net/L1z9za23/#tabs=js,result,html,resources)
 
-1. When can we talk about React and NG2 components
-2. Talk about React
-3. Talk about NG2
-4. Talk about ES6, Babel, and webpack/systemJS,rollup
-5. Talk about how to use Kendo UI with React/NG2 ...ideal way until real thing happens
-6. 
+
 
 
 
