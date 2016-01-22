@@ -10,21 +10,21 @@ Below is a an HTML `<select>` element that encapsulates child HTML `<option>` el
 
 [source code](https://jsfiddle.net/s2pxp36L/#tabs=html,result)
 
-When a browser parses this tree of elements it will of course produce a UI containing a textual list of items that can be selected. Click on "Result" tab, to see what the browser produces.
+When a browser parses this tree of elements it will produce a UI containing a textual list of items that can be selected. Click on the "Result" tab, to see what the browser produces.
 
-The browser and the DOM (i.e. the shadow DOM) are working together behind the scenes to turn the HTML into a `<select>` UI component. Note that the `<select>` component allows the user to make a selection thus storing the state of that selection (i.e. click on "Volvo", and you have selected it instead of "Mercedes").
+The browser and the DOM (i.e. the shadow DOM) are working together behind the scenes to turn the `<select>` HTML into a UI component. Note that the `<select>` component allows the user to make a selection thus storing the state of that selection (i.e. click on "Volvo", and you have selected it instead of "Mercedes").
 
-Using React we can essentially do the same exact thing but instead of using HTML elements directly we use React elements and the virtual DOM that in turn will create real HTML elements and DOM structures.
+Using React we can essentially do the same exact thing but instead of using HTML elements directly we use React elements and the virtual DOM than in turn will create real HTML elements and DOM structures.
 
 ##### Defining a component
 
-Below I am creating a `<MySelect>` React component, in React, by extending (i.e. child class) the `React.Component` function using ES6 `class` syntax. 
+Below I am creating a `<MySelect>` React component, in React, by extending (i.e. child class) the `React.Component` function. 
 
 As you can see the `<MySelect>` component is made up of an empty styled React `<div>` element.
 
 ```javascript
-class MySelect extends React.Component { //define MySelect component
-    render() {
+var MySelect = React.createClass({ //define MySelect component
+    render: function(){
         var mySelectStyle = {
             border: '1px solid #999',
             display: 'inline-block',
@@ -32,10 +32,10 @@ class MySelect extends React.Component { //define MySelect component
         };
         return <div style={mySelectStyle}></div>; //react div element, via JSX
     }
-};
+});
 ```
 
-Yes, that `<div>` is an HTML like tag, yes in JavaScript, called JSX. JSX is a custom JavaScript syntax used by React to express React elements that map to HTML elements. This syntax must be transformed from JSX to real JavaScript by a JavaScript transformer called [Babel](http://babeljs.io/).
+That `<div>` is an HTML like tag, yes in JavaScript, called JSX. JSX is a custom JavaScript syntax used by React to express React elements that map to HTML elements. This syntax must be transformed from JSX to real JavaScript by a JavaScript transformer called [Babel](http://babeljs.io/).
 
 After Babel transforms the JSX into real JavaScript, it will look like this:
 
@@ -43,15 +43,21 @@ After Babel transforms the JSX into real JavaScript, it will look like this:
 return React.createElement('div', { style: mySelectStyle });
 ```
 
+instead of this:
+
+```javascript
+return <div style={mySelectStyle}></div>;
+```
+
 For now, just keep in mind that the HTML elements that you see in React JavaScript code are being transformed into actual JavaScript/React code by Babel along with ES6 syntax (i.e. `class`, `extends`, etc...).
 
 My `<MySelect>` component at this point consist of an empty React `<div>` element. Let's change that. 
 
-Below I am going to define another component called `<MyOption>` and then use the `<MyOption>` component within the `<MySelect>` component (aka composition).
+I'm going to define another component called `<MyOption>` and then use the `<MyOption>` component within the `<MySelect>` component (aka composition). Examine the changes in the code below.
 
 ```javascript
-class MySelect extends React.Component { //define MySelect component
-    render() {
+var MySelect = React.createClass({
+    render: function(){
         var mySelectStyle = {
             border: '1px solid #999',
             display: 'inline-block',
@@ -66,19 +72,19 @@ class MySelect extends React.Component { //define MySelect component
             </div>
         );
     }
-};
+});
 
-class MyOption extends React.Component { //define MyOption component
-    render() {
+var MyOption = React.createClass({  //define MyOption component
+    render: function(){
         return <div>{this.props.value}</div>; //react div element, via JSX
     }
-};
+});
 ```
 
 
 ##### React props
 
-The first thing you should notice is that the `<MyOption>` component is made up of one `<div>` containing the expression `{this.props.value}`. The `{}` brackets indicate to JSX that a JavaScript expression is being used. Inside of the `{}` brackets JavaScript is used to gain access (i.e. `this.props.value`) to the properties or attributes passed by the `<MyOption>` component. In other words when the `<MyOption>` component is rendered the value passed, via what looks like an HTML attribute (i.e. `value="Volvo"`) will be placed into the `<div>`. These HTML looking attributes are consider React props. React uses them to pass state-less/immutable options into components.
+The first thing you should notice is that the `<MyOption>` component is made up of one `<div>` containing the expression `{this.props.value}`. The `{}` brackets indicate to JSX that a JavaScript expression is being used. Inside of the `{}` brackets JavaScript is used to gain access (i.e. `this.props.value`) to the properties or attributes passed by the `<MyOption>` component. In other words when the `<MyOption>` component is rendered the value passed, via what looks like an HTML attribute (i.e. `value="Volvo"`) will be placed into the `<div>`. These HTML looking attributes are consider React props. React uses them to pass stateless/immutable options into components.
 
 ##### Rendering a component to the Virtual DOM, then HTML DOM
 
@@ -98,7 +104,16 @@ Before I move on I want to point out that no implicit DOM interactions we're wri
 
 ##### React state
 
-In order for our `<MyOption>` component to mimic a native `<select>` element we are going to have to add state. State typically gets involved when a component contains snapshots of information. In regards to our custom `<MyOption>` component, it's state is the currently selected text or the fact that no text at all is selected. Note that state will typically involved user or network events.
+In order for our `<MyOption>` component to mimic a native `<select>` element we are going to have to add state. State typically gets involved when a component contains snapshots of information. In regards to our custom `<MyOption>` component, it's state is the currently selected text or the fact that no text is selected at all. Note that state will typically involved user or network events.
+
+1. When can we talk about React and NG2 components
+2. Talk about React
+3. Talk about NG2
+4. Talk about ES6, Babel, and webpack/systemJS,rollup
+5. Talk about how to use Kendo UI with React/NG2 ...ideal way until real thing happens
+6. 
+
+
 
 
 
