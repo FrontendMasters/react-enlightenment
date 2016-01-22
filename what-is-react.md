@@ -1,6 +1,6 @@
 # What is React?
 
-React is a JavaScript tool that makes it easy to reason about, construct, and maintain stateless and stateful user interfaces. It provides the means to declaratively define and divided a UI into components (aka React components) made up of HTML like elements (aka React elements). 
+React is a JavaScript tool that makes it easy to reason about, construct, and maintain stateless and stateful user interfaces. It provides the means to declaratively define and divide a UI into components (aka React components) made up of HTML like elements (aka React elements). 
 
 I could ramble on trying to express in words exact what React is, but I think it is best to just show you. Don't try and figure out all the details as I describe React using code in this section. Just follow along grabbing a hold of the gist of it for now. The fine details will come later.
 
@@ -93,7 +93,7 @@ Hold up, you might be thinking. We haven't actually re-created a select at all. 
 
 Before I move on I want to point out that no implicit DOM interactions we're written to get the `<MyOption>` component into the real DOM. In other words, no jQuery invoke in the creation of this component. The dealings with the actual DOM have all been abstracted. That's pretty neat. Right? Don't answer yet, there is more to come.
 
-In order for our `<MyOption>` component to mimic a native `<select>` element we are going to have to add state. State typically gets involved when a component contains snapshots of information. In regards to our custom `<MyOption>` component, it's state is the currently selected (or not selected) text. Note that state will typically involved user or network events.
+In order for our `<MyOption>` component to mimic a native `<select>` element we are going to have to add state. State typically gets involved when a component contains snapshots of information. In regards to our custom `<MyOption>` component, it's state is the currently selected text or the fact that no text at all is selected. Note that state will typically involved user or network events.
 
 
 
