@@ -290,7 +290,7 @@ ReactDOM.render(React.createElement(MySelect, null), document.getElementById('ap
 
 ##### Performant changes to the DOM
 
-I'm going to end this whirl wind tour where most people talking about React typically being. 
+I'm going to end this whirl wind tour where most people typically start talking about React. 
 
 
 
