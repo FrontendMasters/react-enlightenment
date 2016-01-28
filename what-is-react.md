@@ -109,7 +109,7 @@ Before I move on I want to point out that no implicit DOM interactions we're wri
 
 ##### Using React state
 
-In order for our `<MySelect>` component to mimic a native `<select>` element we are going to have to add state. State typically gets involved when a component contains snapshots of information. In regards to our custom `<MyOption>` component, it's state is the currently selected text or the fact that no text is selected at all. Note that state will typically involved user events (i.e. mouse, keyboard, clipboard etc.. ) or network events (i.e. AJAX).
+In order for our `<MySelect>` component to mimic a native `<select>` element we are going to have to add state. State typically gets involved when a component contains snapshots of information. In regards to our custom `<MyOption>` component, it's state is the currently selected text or the fact that no text is selected at all. Note that state will typically involved user events (i.e. mouse, keyboard, clipboard etc.. ) or network events (i.e. AJAX) and is the value used to determine when the UI needs to be re-rendered.
 
 State is typically found on the top most component which makes up a UI component. Using the `getInitialState()` function we can set the default state of our component to `false` by returning a state object (i.e. `return {selected: false};`) when `getInitialState` is invoked. I've update the code below accordingly. As I am making updates to the code, make sure you read the JavaScript comments which call attention to the changes in the code.
 
@@ -288,9 +288,27 @@ var MyOption = React.createClass({
 ReactDOM.render(React.createElement(MySelect, null), document.getElementById('app'));
 ```
 
-##### Performant changes to the DOM
+##### Understanding the role of the Virtual DOM
 
-I'm going to end this whirl wind tour where most people typically start talking about React. 
+I'm going to end this whirl wind tour where most people typically start talking about React. Let't finished off this chapter by considering the merits of the React virtual DOM.
+
+Hopefully you notice the only interaction with the real DOM we had during the creation of our custom select UI is when we told the `ReactDOM.render()` function where to render our UI component in the HTML page (i.e. render it to `<div id="app"></div>`). This might just be the only interaction you ever have with the real DOM when building out a React applications. And here in lies much of the value of React. By using React, you really don't ever have to think about the DOM like you once did when you were writing jQuery code. React fills the roll of jQuery as a complete DOM abstraction removing all implicit DOM interactions from your code. Of course, that's not the only benefit.
+
+Because the DOM has been completely abstracted behind the Virtual DOM this allows for a very performant pattern of updating the real DOM when state is changed. Simply expressed, the Virtual DOM keeps track of UI changes, then compares that to the real DOM, and then only makes the minimal changes needed to update the UI. In other words, the real DOM is only ever patch with the minimal changes needed. This is refereed to as DOM diffing.
+
+Seeing these performat updates in real time will often clarify any confusion about exactly what is occurring. Look at the animated image below showing the usage of the UI component we created in this chapter.
+
+![](images/what-is-front-end-dev.png "images/Xe9aa00RGi.gif")
+
+
+
+
+
+
+
+
+
+
 
 
 
