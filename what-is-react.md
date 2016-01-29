@@ -298,11 +298,12 @@ Because the DOM has been completely abstracted behind the Virtual DOM this allow
 
 Seeing these performat updates in real time will often clarify any confusion about DOM diffing. Look at the animated image below showcasing the usage (i.e. changing state) of the UI component we created in this chapter.
 
-![](images/Xe9aa00RGi.gif "images/Xe9aa00RGi.gif")
+![](images/XFEJxkXPVs.gif "images/XFEJxkXPVs.gif")
 
 Notice that as the UI component changes state only the minimally needed changes to the real DOM are occurring. We know that React is doing it's job because the only parts that are actually being updated are the parts with a green outline/background. The entire UI component is not being update on each state change, only the parts that require a visual change.
 
-Now lets be clear, the concept of making as few changes as possible to the DOM isn't a revolutionary concept. One could of course accomplish the same thing with some carefully crafted jQuery code alone. However, by using React, you'll rarely, if at all, have to even think about. The Virtual DOM is doing all the performance work for you.
+Now lets be clear, the mere concept of making as few changes to the DOM as needed isn't a revolutionary concept. One could accomplish the same thing with some very carefully crafted and peformant minded jQuery code. However, by using React you'll rarely, if at all, have to even think about it. The Virtual DOM is doing all the performance work for you, so you don't have too. In a sense, this is the best type of jQuery possible. One where you don't even have to worry about the DOM.
+
 
 
 
