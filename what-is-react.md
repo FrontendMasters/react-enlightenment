@@ -296,9 +296,15 @@ Hopefully you notice the only interaction with the real DOM we had during the cr
 
 Because the DOM has been completely abstracted behind the Virtual DOM this allows for a very performant pattern of updating the real DOM when state is changed. Simply expressed, the Virtual DOM keeps track of UI changes, then compares that to the real DOM, and then only makes the minimal changes needed to update the UI. In other words, the real DOM is only ever patch with the minimal changes needed. This is refereed to as DOM diffing.
 
-Seeing these performat updates in real time will often clarify any confusion about exactly what is occurring. Look at the animated image below showing the usage of the UI component we created in this chapter.
+Seeing these performat updates in real time will often clarify any confusion about DOM diffing. Look at the animated image below showcasing the usage (i.e. changing state) of the UI component we created in this chapter.
 
-![](images/what-is-front-end-dev.png "images/Xe9aa00RGi.gif")
+![](images/Xe9aa00RGi.gif "images/Xe9aa00RGi.gif")
+
+Notice that as the UI component changes state only the minimally needed changes to the real DOM are occurring. We know that React is doing it's job because the only parts that are actually being updated are the parts with a green outline/background. The entire UI component is not being update on each state change, only the parts that require a visual change.
+
+Now lets be clear, the concept of making as few changes as possible to the DOM isn't a revolutionary concept. One could of course accomplish the same thing with some carefully crafted jQuery code alone. However, by using React, you'll rarely, if at all, have to even think about. The Virtual DOM is doing all the performance work for you.
+
+
 
 
 
