@@ -294,7 +294,7 @@ I'm going to end this whirl wind tour where most people typically start talking 
 
 Hopefully you notice the only interaction with the real DOM we had during the creation of our custom select UI is when we told the `ReactDOM.render()` function where to render our UI component in the HTML page (i.e. render it to `<div id="app"></div>`). This might just be the only interaction you ever have with the real DOM when building out a React application. And here in lies much of the value of React. By using React, you really don't ever have to think about the DOM like you once did when you were writing jQuery code. React replaces jQuery, as a complete DOM abstraction, by removing all implicit DOM interactions from your code. Of course, that's not the only benefit.
 
-Because the DOM has been completely abstracted behind the Virtual DOM this allows for a very performant pattern of updating the real DOM when state is changed. The Virtual DOM keeps track of UI changes based on state, then compares that to the real DOM, and then makes only the minimal changes required to update the UI. In other words, the real DOM is only ever patch with the minimal changes needed when state is changed.
+Because the DOM has been completely abstracted behind the Virtual DOM this allows for a very performant pattern of updating the real DOM when state is changed. The Virtual DOM keeps track of UI changes based on state, then compares that to the real DOM, and then makes only the minimal changes required to update the UI. In other words, the real DOM is only ever patch with the minimal changes needed when state changes occur.
 
 Seeing these performat updates in real time will often clarify any confusion about DOM diffing. Look at the animated image below showcasing the usage (i.e. changing state) of the UI component we created in this chapter.
 
@@ -302,7 +302,7 @@ Seeing these performat updates in real time will often clarify any confusion abo
 
 Notice that as the UI component changes state only the minimally needed changes to the real DOM are occurring. We know that React is doing it's job because the only parts of the real DOM that are actually being updated are the parts with a green outline/background. The entire UI component is not being update on each state change, only the parts that require a change are being changed.
 
-Now lets be clear, this isn't a revolutionary concept. One could accomplish the same thing with some very carefully crafted and peformant minded jQuery code. However, by using React you'll rarely, if at all, have to even think about it. The Virtual DOM is doing all the performance work for you. In a sense, this is the best type of jQuery possible. One where you don't even have to worry about the DOM.
+Now lets be clear, this isn't a revolutionary concept. One could accomplish the same thing with some carefully crafted and peformant minded jQuery code. However, by using React you'll rarely, if at all, have to even think about it. The Virtual DOM is doing all the performance work for you. In a sense, this is the best type of jQuery/DOM abstraction possible. One where you don't even have to worry about the DOM or the abstraction. It all just happens behinds the scene without you ever implicitly having to interact with the abstraction itself.
 
 
 
