@@ -7,7 +7,7 @@
     * [Using JSX via Babel](react-basic-setup/1.2.md)
     * [Using ES6 & ES* with React](react-basic-setup/1.3.md)
     * [Writing React with JSFiddle](react-basic-setup/1.4.md)
-* [React conceptual overview](react-overview.md)
+* [React overview](react-overview.md)
     * [Creating React elements](react-overview/2.1.md)
     * [Creating JSX](react-overview/2.2.md)
     * [Writing JavaScript in JSX](react-overview/2.3.md)
