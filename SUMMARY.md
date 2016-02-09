@@ -29,6 +29,7 @@
     * [Babel/JSX via CLI](react-advanced-setup/2.1.md)
     * [Babel/JSX via SystemJS](react-advanced-setup/2.2.md)
     * [Babel/JSX via webpack](react-advanced-setup/2.3.md)
+    * [React Developer Tools ](react-advanced-setup/2.4.md)
     
 
 
