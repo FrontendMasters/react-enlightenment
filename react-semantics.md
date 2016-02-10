@@ -35,7 +35,7 @@ JSX is an optional XML-like syntax extension to ECMAScript that can be used to d
 ***
 
 #### React Elements (aka `ReactElement`)
-React elements are the primary object type in React (i.e. `ReactElement`) and can be created using `React.createElement('div');`. In other words React elements are objects that represent HTML elements.
+React elements are the primary object type in React (i.e. `ReactElement`) and can be created using `React.createElement('div');`. In other words React elements are objects that represent HTML elements. They are a light, stateless, immutable, virtual representation of a DOM Element.
 
 ***
 
