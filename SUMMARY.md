@@ -7,7 +7,7 @@
     * [Using JSX via Babel](react-basic-setup/1.2.md)
     * [Using ES6 & ES* with React](react-basic-setup/1.3.md)
     * [Writing React with JSFiddle](react-basic-setup/1.4.md)
-* [React Elements](react-elements.md)
+* [React Nodes](react-elements.md)
     * [What is a React node?](react-elements/2.1.md)
     * [Creating React nodes](react-elements/2.2.md)
     * [Defining React element attributes (aka props)](react-elements/2.3.md)
