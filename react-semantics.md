@@ -29,13 +29,34 @@ Used to represent the current version of JavaScript as well as potential future 
 
 ***
 
+#### factories
+
+
+***
+
 #### JSX
 JSX is an optional XML-like syntax extension to ECMAScript that can be used to define a tree structure consisting of components.
 
 ***
 
-#### React Elements (aka `ReactElement`)
-React elements are the primary object type in React (i.e. `ReactElement`) and can be created using `React.createElement('div');`. In other words React elements are objects that represent HTML elements. They are a light, stateless, immutable, virtual representation of a DOM Element.
+#### Props (i.e. HTML attributes, custom attributes, `data-*`, and `aria-*`)
+
+
+***
+
+#### React element nodes (aka `ReactElement`)
+
+An HTML or custom HTML element node representation in the Virtual DOM created using `React.createElement('div');`.
+
+***
+
+#### React text nodes (aka `ReactText`)
+A text node representation in the Virtual DOM created using `React.createElement('div',null,'a text node');`.
+
+***
+
+#### React nodes
+React nodes (i.e. element and text nodes) are the primary object type in React and can be created using `React.createElement('div');`. In other words React nodes are objects that represent DOM nodes and children DOM nodes. They are a light, stateless, immutable, virtual representation of a DOM node.
 
 ***
 

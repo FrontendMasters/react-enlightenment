@@ -1,6 +1,6 @@
 # What is React?
 
-React is a JavaScript tool that makes it easy to reason about, construct, and maintain stateless and stateful user interfaces. It provides the means to declaratively define and divide a UI into components (aka React components) made up of HTML like elements (aka React elements). 
+React is a JavaScript tool that makes it easy to reason about, construct, and maintain stateless and stateful user interfaces. It provides the means to declaratively define and divide a UI into components (aka React components) made up of HTML like nodes (aka React nodes). 
 
 I could ramble on trying to express in words what React is, but I think it is best just to show you. Don't try and figure out all the details as I describe React using code in this section. Just follow along grabbing a hold of the gist of it for now. The fine details will come later.
 
@@ -14,15 +14,15 @@ When a browser parses this tree of elements it will produce a UI containing a te
 
 The browser, the DOM, and the shadow DOM are working together behind the scenes to turn the `<select>` HTML into a UI component. Note that the `<select>` component allows the user to make a selection thus storing the state of that selection (i.e. click on "Volvo", and you have selected it instead of "Mercedes").
 
-Using React we can essentially do the same exact thing but instead of using HTML elements directly we use React elements and the virtual DOM that in turn will create real HTML elements in an HTML page (i.e. the DOM).
+Using React we can essentially do the same exact thing but instead of using HTML elements directly we use React nodes and the virtual DOM that in turn will create real HTML elements in an HTML page (i.e. the DOM).
 
 ##### Defining a component
 
 Below I am creating a `<MySelect>` React component by invoking the `React.createClass` function in order to create a `MySelect` class. 
 
-As you can see the `MySelect` component is made up of an empty styled React `<div>` element.
+As you can see the `MySelect` component is made up of an empty styled React `<div>` node element.
 
-```javascript
+```js
 var MySelect = React.createClass({ //define MySelect component
     render: function(){
         var mySelectStyle = {
@@ -35,7 +35,7 @@ var MySelect = React.createClass({ //define MySelect component
 });
 ```
 
-That `<div>` is an HTML like tag, yes in JavaScript, called [JSX](https://facebook.github.io/jsx/). JSX is a custom JavaScript syntax used by React to express React elements that map to real HTML elements. React elements, defined using JSX should not be considered a one to one match to HTML elements. There are [differences](https://facebook.github.io/react/docs/dom-differences.html) and some [gotchas](https://facebook.github.io/react/docs/jsx-gotchas.html). 
+That `<div>` is an HTML like tag, yes in JavaScript, called [JSX](https://facebook.github.io/jsx/). JSX is a custom JavaScript syntax used by React to express React nodes that map to real HTML elements and text nodes. React nodes, defined using JSX should not be considered a one to one match to HTML elements. There are [differences](https://facebook.github.io/react/docs/dom-differences.html) and some [gotchas](https://facebook.github.io/react/docs/jsx-gotchas.html). 
 
 JSX syntax must be transformed from JSX to real JavaScript in order to be parsed by ES5 browsers. The official tool used to transform JSX is called [Babel](http://babeljs.io/).
 
@@ -51,9 +51,9 @@ instead of this:
 return <div style={mySelectStyle}></div>;
 ```
 
-For now, just keep in mind that the HTML elements that you see in React JavaScript code are being transformed into actual JavaScript/React code by Babel along with ES6 syntax.
+For now, just keep in mind that the DOM nodes that you see in React JavaScript code are being transformed into actual JavaScript/React code by Babel along with ES6 syntax.
 
-The `<MySelect>` component at this point consist of an empty React `<div>` element. That seems rather pointless, so let's change that. 
+The `<MySelect>` component at this point consist of an empty React `<div>` node element. That seems rather pointless, so let's change that. 
 
 I'm going to define another component called `<MyOption>` and then use the `<MyOption>` component within the `<MySelect>` component (aka composition).
 
@@ -95,7 +95,7 @@ The `{}` brackets are used in the JSX to gain access (i.e. `this.props.value`) t
 
 At this point our JavaScript only defines two React Components. We have yet to actually render these components to the Virtual DOM and thus the HTML DOM.
 
-Before we do that I'd like to mention that up to this point all we have done is define a UI component made up of two React components. In theory, the JavaScript we have so far is just the definition of a UI component. This same definition, in theory, could also be used to render this component to a [native mobile platform](https://github.com/facebook/react-native) or an [HTML canvas](https://github.com/Flipboard/react-canvas). But we're not going to do that, even though one could do that. Just be aware that React is a pattern for organizing a UI that can transcend the DOM, front-end applications, and even the web platform.
+Before we do that I'd like to mention that up to this point all we have done is define a UI component made up of two React components. In theory, the JavaScript we have so far is just the definition of a UI component. This same definition, in theory, could also be used to render this component to a [native mobile platform](https://github.com/facebook/react-native) or an [HTML canvas](https://github.com/Flipboard/react-canvas). But we're not going to do that, even though one could do that. Just be aware that React is a pattern for organizing a UI that can transcend the DOM, front-end applications, and [even the web platform](https://facebook.github.io/react/docs/top-level-api.html#reactdomserver).
 
 Let's now render the `<MyOption>` component to the virtual DOM which in turn will render it to the actual DOM inside of an HTML page.
 
@@ -105,13 +105,15 @@ In the JavaScript below notice I added a call to the `ReactDOM.render()` functio
 
 Hold up, you might be thinking. We haven't actually re-created a `<select>` at all. All we have done is create a static/stateless list of text. We'll fix that next.
 
-Before I move on I want to point out that no implicit DOM interactions we're written to get the `<MyOption>` component into the real DOM. In other words, no jQuery code was invoke during the creation of this component. The dealings with the actual DOM have all been abstracted. That's pretty neat. Right?
+Before I move on I want to point out that no implicit DOM interactions we're written to get the `<MyOption>` component into the real DOM. In other words, no jQuery code was invoke during the creation of this component. The dealings with the actual DOM have all been abstracted.
 
 ##### Using React state
 
-In order for our `<MySelect>` component to mimic a native `<select>` element we are going to have to add state. State typically gets involved when a component contains snapshots of information. In regards to our custom `<MyOption>` component, it's state is the currently selected text or the fact that no text is selected at all. Note that state will typically involved user events (i.e. mouse, keyboard, clipboard etc.. ) or network events (i.e. AJAX) and is the value used to determine when the UI needs to be re-rendered.
+In order for our `<MySelect>` component to mimic a native `<select>` element we are going to have to add state. State typically gets involved when a component contains snapshots of information. In regards to our custom `<MyOption>` component, it's state is the currently selected text or the fact that no text is selected at all. Note that state will typically involved user events (i.e. mouse, keyboard, clipboard etc.. ) or network events (i.e. AJAX) and is the value used to determine when the UI needs to be re-rendered (i.e. when value changes re-render).
 
-State is typically found on the top most component which makes up a UI component. Using the `getInitialState()` function we can set the default state of our component to `false` by returning a state object (i.e. `return {selected: false};`) when `getInitialState` is invoked. I've update the code below accordingly. As I am making updates to the code, make sure you read the JavaScript comments which call attention to the changes in the code.
+State is typically found on the top most component which makes up a UI component. Using the `getInitialState()` function we can set the default state of our component to `false` by returning a state object when `getInitialState` is invoked (i.e. `return {selected: false};`). 
+
+I've update the code below accordingly. As I am making updates to the code, make sure you read the JavaScript comments which call attention to the changes in the code.
 
 ```javascript
 var MySelect = React.createClass({
@@ -142,7 +144,7 @@ var MyOption = React.createClass({
 });
 ```
 
-With the state setup next we'll add a callback function called `select` that gets called when a user clicks on an option. Inside of this function we get the text of the option (via `event` parameter) that was selected and use that to determine how to `setState` on the current component. Notice that I am using `event` details passed to the `select` callback. This pattern should look familiar if you've had any experience with jQuery.
+With the default state set, next we'll add a callback function called `select` that gets called when a user clicks on an option. Inside of this function we get the text of the option (via `event` parameter) that was selected and use that to determine how to `setState` on the current component. Notice that I am using `event` details passed to the `select` callback. This pattern should look familiar if you've had any experience with jQuery.
 
 ```javascript
 var MySelect = React.createClass({
@@ -182,7 +184,7 @@ var MyOption = React.createClass({
 
 In order for our `<MyOption>` components to gain access to the `select` function we'll have to pass a reference to it, via props, from the `<MySelect>` component to the `<MyOption>` component. To do this we add `select={this.select}` to the `<MyOption>` components. 
 
-With that in place we can add `onClick={this.props.select}` to the `<MyOption>` components. Hopefully its obvious that what we have done where is wired up a `click` event that will fire the `select` function.
+With that in place we can add `onClick={this.props.select}` to the `<MyOption>` components. Hopefully its obvious that what all we have done is wired up a `click` event that will call the `select` function.
 
 ```javascript
 var MySelect = React.createClass({
@@ -294,7 +296,7 @@ I'm going to end this whirl wind tour where most people typically start talking 
 
 Hopefully you notice the only interaction with the real DOM we had during the creation of our custom select UI is when we told the `ReactDOM.render()` function where to render our UI component in the HTML page (i.e. render it to `<div id="app"></div>`). This might just be the only interaction you ever have with the real DOM when building out a React application. And here in lies much of the value of React. By using React, you really don't ever have to think about the DOM like you once did when you were writing jQuery code. React replaces jQuery, as a complete DOM abstraction, by removing all implicit DOM interactions from your code. Of course, that's not the only benefit.
 
-Because the DOM has been completely abstracted behind the Virtual DOM this allows for a very performant pattern of updating the real DOM when state is changed. The Virtual DOM keeps track of UI changes based on state, then compares that to the real DOM, and then makes only the minimal changes required to update the UI. In other words, the real DOM is only ever patch with the minimal changes needed when state changes occur.
+Because the DOM has been completely abstracted behind the Virtual DOM this allows for a heavy handed performance pattern of updating the real DOM when state is changed. The Virtual DOM keeps track of UI changes based on state, then compares that to the real DOM, and then makes only the minimal changes required to update the UI. In other words, the real DOM is only ever patch with the minimal changes needed when state changes occur.
 
 Seeing these performat updates in real time will often clarify any confusion about DOM diffing. Look at the animated image below showcasing the usage (i.e. changing state) of the UI component we created in this chapter.
 
@@ -302,9 +304,10 @@ Seeing these performat updates in real time will often clarify any confusion abo
 
 Notice that as the UI component changes state only the minimally needed changes to the real DOM are occurring. We know that React is doing it's job because the only parts of the real DOM that are actually being updated are the parts with a green outline/background. The entire UI component is not being update on each state change, only the parts that require a change are being changed.
 
-Now lets be clear, this isn't a revolutionary concept. One could accomplish the same thing with some carefully crafted and peformant minded jQuery code. However, by using React you'll rarely, if at all, have to even think about it. The Virtual DOM is doing all the performance work for you. In a sense, this is the best type of jQuery/DOM abstraction possible. One where you don't even have to worry about the DOM or the abstraction. It all just happens behinds the scene without you ever implicitly having to interact with the abstraction itself.
+Let me be clear, this isn't a revolutionary concept. One could accomplish the same thing with some carefully crafted and peformant minded jQuery code. However, by using React you'll rarely, if at all, have to even think about it. The Virtual DOM is doing all the performance work for you. In a sense, this is the best type of jQuery/DOM abstraction possible. One where you don't even have to worry about the DOM or the abstraction. It all just happens behinds the scene without you ever implicitly having to interact with the abstraction itself.
 
 
+Now, it might be tempting to leaving this introduction thinking the value of React is contained in the fact that it almost eliminates the need for something like jQuery. And while the Virtual DOM is certainly a relief when compared to implicit jQuery code, the value of React does not rest alone on the Virtual DOM. The Virtual DOM is just just the icing on the cake. Simply stated, the value of React rests upon the fact it provides a simple and maintainable pattern for creating a tree of UI components.
 
 
 

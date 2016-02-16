@@ -1,8 +1,6 @@
 # React Setup
 
-This section will discuss setting up an HTML page that when parsed by a web browser will correctly run React code and JSX expressions. 
-
-The chapter is broken down into the following sections.
+This section will discuss setting up an HTML page so that when it is parsed by a web browser, at runtime, the browser can transforming JSX expressions and correctly run React code.
 
 
 
