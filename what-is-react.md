@@ -18,7 +18,7 @@ Using React we can essentially do the same exact thing but instead of using HTML
 
 ##### Defining a component
 
-Below I am creating a `<MySelect>` React component by invoking the `React.createClass` function in order to create a `MySelect` class. 
+Below I am creating a `<MySelect>` React component by invoking the `React.createClass` function in order to create a `MySelect` component class. 
 
 As you can see the `MySelect` component is made up of an empty styled React `<div>` node element.
 
@@ -37,9 +37,11 @@ var MySelect = React.createClass({ //define MySelect component
 
 That `<div>` is an HTML like tag, yes in JavaScript, called [JSX](https://facebook.github.io/jsx/). JSX is a custom JavaScript syntax used by React to express React nodes that map to real HTML elements and text nodes. React nodes, defined using JSX should not be considered a one to one match to HTML elements. There are [differences](https://facebook.github.io/react/docs/dom-differences.html) and some [gotchas](https://facebook.github.io/react/docs/jsx-gotchas.html). 
 
-JSX syntax must be transformed from JSX to real JavaScript in order to be parsed by ES5 browsers. The official tool used to transform JSX is called [Babel](http://babeljs.io/).
+JSX syntax must be transformed from JSX to real JavaScript in order to be parsed by ES5 browsers. The above code, if not transformed would of course cause a JavaScript error. 
 
-After Babel transforms the JSX into real JavaScript, it will look like this:
+The official tool used to transform JSX to actual JavaScript code is called [Babel](http://babeljs.io/).
+
+After Babel transforms the JSX `<div>` in the above code into real JavaScript, it will look like this:
 
 ```javascript
 return React.createElement('div', { style: mySelectStyle });
@@ -51,7 +53,7 @@ instead of this:
 return <div style={mySelectStyle}></div>;
 ```
 
-For now, just keep in mind that the DOM nodes that you see in React JavaScript code are being transformed into actual JavaScript/React code by Babel along with ES6 syntax.
+For now, just keep in mind that when you see HTML in React code it is/must be  transformed into actual JavaScript code by Babel, along with ES6 syntax.
 
 The `<MySelect>` component at this point consist of an empty React `<div>` node element. That seems rather pointless, so let's change that. 
 

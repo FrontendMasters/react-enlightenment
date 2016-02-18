@@ -1,3 +1,3 @@
 # React Nodes
 
-This section will discuss creating React nodes ([text](http://domenlightenment.com/#7) or [element](http://domenlightenment.com/#3) nodes) using JSX.
+In the previous chapter we learned how to create React nodes using plain ES5 JavaScript code. In this Chapter we look at creating React nodes using the JSX syntax extension.

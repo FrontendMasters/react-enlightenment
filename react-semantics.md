@@ -31,11 +31,12 @@ Used to represent the current version of JavaScript as well as potential future 
 
 #### factories
 
+A function that generates a React element node with a particular type property.
 
 ***
 
 #### JSX
-JSX is an optional XML-like syntax extension to ECMAScript that can be used to define a tree structure consisting of components.
+JSX is an optional XML-like syntax extension to ECMAScript that can be used to define an HTML-like tree structure in a JavaScript file. The JSX expressions in a JavaScript file must be transformed to JavaScript syntax before a JavaScript engine can parse the file. Babel is typically used, and recommended for transforming JSX expressions.
 
 ***
 
