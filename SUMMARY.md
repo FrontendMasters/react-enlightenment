@@ -14,7 +14,11 @@
     * [Using React node element factories](react-nodes/2.4.md)
 * [JSX](react-jsx.md)
     * [What is a JSX?](react-jsx/3.1.md)
-    * [Using JSX to create React nodes](react-jsx/3.2.md)
+    * [Using JSX to create HTML React nodes](react-jsx/3.2.md)
+    * [Using JSX to create custom HTML React nodes](react-jsx/3.3.md)
+    * [Using JavaScript expressions in JSX](react-jsx/3.4.md)
+    * [Using JavaScript comments in JSX](react-jsx/3.5.md)
+    * [Using inline CSS styles in JSX](react-jsx/3.6.md)
 
     
 

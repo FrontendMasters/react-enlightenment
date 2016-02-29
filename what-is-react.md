@@ -6,7 +6,11 @@ I could ramble on trying to express in words what React is, but I think it is be
 
 ### A whirl wind tour of React components
 
-Below is a an HTML `<select>` element that encapsulates child HTML `<option>` elements.
+##### Using React we can create UI components similar to a `<select>`
+
+A `<select>` is not unlike a React component and is a good place to start learning about the nature of a React component.
+
+Below is a an HTML `<select>` element that encapsulates child HTML `<option>` elements. Hopefully the creation and functionality of a `<select>` is mostly already familiar.
 
 [source code](https://jsfiddle.net/s2pxp36L/#tabs=html,result)
 
