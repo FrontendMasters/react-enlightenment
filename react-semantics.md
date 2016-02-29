@@ -29,7 +29,7 @@ Used to represent the current version of JavaScript as well as potential future 
 
 ***
 
-#### factories
+#### Factories
 
 A function that generates a React element node with a particular type property.
 
