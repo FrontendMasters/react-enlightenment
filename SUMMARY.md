@@ -12,7 +12,7 @@
     * [Creating React nodes](react-nodes/2.2.md)
     * [Defining React node attributes (aka props)](react-nodes/2.3.md)
     * [Using React node element factories](react-nodes/2.4.md)
-* [JSX](react-jsx.md)
+* [JavaScript Syntax Extension (aka JSX)](react-jsx.md)
     * [What is a JSX?](react-jsx/3.1.md)
     * [Creating React nodes with JSX](react-jsx/3.2.md)
     * [Using JS expressions in JSX](react-jsx/3.3.md)
