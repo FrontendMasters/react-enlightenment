@@ -2,11 +2,9 @@
 
 React is a JavaScript tool that makes it easy to reason about, construct, and maintain stateless and stateful user interfaces. It provides the means to declaratively define and divide a UI into UI components (aka React components) made up of HTML like nodes (aka React nodes).
 
-I could ramble on trying to express in words what React is, but I think it is best just to show you. Don't try and figure out all the details yet as I describe React in this section. Just follow along grabbing a hold of the gist of it for now. The fine details will come later.
+I could ramble on trying to express in words what React is, but I think it  best to initial just show you. What follows is a whirl wind tour of React and React components from thirty thousand feet. Don't try and figure out all the details yet as I describe React in this section. Just follow along grabbing a hold of the gist of it for now.
 
-### A whirl wind tour of React components
-
-##### Using React we can create UI components similar to a `<select>`
+## Using React to create UI components similar to a `<select>`
 
 A `<select>` is not unlike a React component and is a good place to start learning about the nature of a React component.
 
@@ -22,7 +20,7 @@ Using React we can essentially do the same exact thing but instead of using HTML
 
 Let's now create our own drop-down UI component using React.
 
-##### Defining a React component
+## Defining a React component
 
 Below I am creating a `<MySelect>` React component by invoking the `React.createClass` function in order to create a `MySelect` component class. 
 
@@ -96,13 +94,15 @@ var MyOption = React.createClass({  //define MyOption component
 
 You should note how the `<MyOption>` component is used inside of the `<MySelect>`` component.
 
-##### Passing Component Options Using React props
+##
+ Passing Component Options Using React props
 
 Notice in the update code is that the `<MyOption>` component is made up of one `<div>` containing the expression `{this.props.value}`. The `{}` brackets indicate to JSX that a JavaScript expression is being used. In other words, inside of `{}` you can write JavaScript. 
 
 The `{}` brackets are used in the JSX to gain access (i.e. `this.props.value`) to the properties or attributes passed by the `<MyOption>` component. In other words when the `<MyOption>` component is rendering the `value` option, passed using an HTML-like attribute (i.e. `value="Volvo"`), will be placed into the `<div>`. These HTML looking attributes are consider React props. React uses them to pass stateless/immutable options into components.
 
-##### Rendering a component to the Virtual DOM, then HTML DOM
+##
+ Rendering a component to the Virtual DOM, then HTML DOM
 
 At this point our JavaScript only defines two React Components. We have yet to actually render these components to the Virtual DOM and thus to the HTML DOM.
 
@@ -118,7 +118,7 @@ Hold up, you might be thinking. We haven't actually re-created a `<select>` at a
 
 Before I move on I want to point out that no implicit DOM interactions we're written to get the `<MyOption>` component into the real DOM. In other words, no jQuery code was invoke during the creation of this component. The dealings with the actual DOM have all been abstracted by the React virtual DOM.
 
-##### Using React state
+## Using React state
 
 In order for our `<MySelect>` component to mimic a native `<select>` element we are going to have to add state. State typically gets involved when a component contains snapshots of information. In regards to our custom `<MyOption>` component, it's state is the currently selected text or the fact that no text is selected at all. Note that state will typically involved user events (i.e. mouse, keyboard, clipboard etc.. ) or network events (i.e. AJAX) and is the value used to determine when the UI needs to be re-rendered (i.e. when value changes re-render).
 
@@ -301,7 +301,8 @@ var MyOption = React.createClass({
 ReactDOM.render(React.createElement(MySelect, null), document.getElementById('app'));
 ```
 
-##### Understanding the role of the Virtual DOM
+##
+ Understanding the role of the Virtual DOM
 
 I'm going to end this whirl wind tour where most people typically start talking about React. Let't finished off this chapter by considering the merits of the React virtual DOM.
 
