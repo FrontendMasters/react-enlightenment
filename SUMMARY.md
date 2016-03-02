@@ -17,9 +17,9 @@
     * [What is a JSX?](react-jsx/3.1.md)
     * [Creating React nodes with JSX](react-jsx/3.2.md)
     * [Rendering JSX to DOM](react-jsx/3.3.md)
-    * [Using JS expressions in JSX](react-jsx/3.3.md)
-    * [Using JS comments in JSX](react-jsx/3.4.md)
-    * [Using inline CSS styles in JSX](react-jsx/3.5.md)
+    * [Using JS expressions in JSX](react-jsx/3.4.md)
+    * [Using JS comments in JSX](react-jsx/3.5.md)
+    * [Using inline CSS styles in JSX](react-jsx/3.6.md)
 
     
 
