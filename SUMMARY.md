@@ -20,7 +20,7 @@
     * [Using JS expressions in JSX](react-jsx/3.4.md)
     * [Using JS comments in JSX](react-jsx/3.5.md)
     * [Using inline CSS styles in JSX](react-jsx/3.6.md)
-    * [Defining attributes/props in JSX](react-jsx/3.7.md)
+    * [Defining JSX attributes/props](react-jsx/3.7.md)
 * React props & state
     * [What are Props?](react-jsx/4.1.md)
     * [What is State?](react-jsx/4.2.md)
