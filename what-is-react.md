@@ -2,11 +2,11 @@
 
 React is a JavaScript tool that makes it easy to reason about, construct, and maintain stateless and stateful user interfaces. It provides the means to declaratively define and divide a UI into UI components (aka React components) made up of HTML like nodes (aka React nodes).
 
-I could ramble on trying to express in words what React is, but I think it  best to initial just show you. What follows is a whirl wind tour of React and React components from thirty thousand feet. Don't try and figure out all the details yet as I describe React in this section. Just follow along grabbing a hold of the gist of it for now.
+I could ramble on trying to express in words what React is, but I think it  best to just show you. What follows is a whirl wind tour of React and React components from thirty thousand feet. Don't try and figure out all the details yet as I describe React in this section. Just follow along grabbing a hold of the big concepts for now.
 
 ## Using React to create UI components similar to a `<select>`
 
-An HTML `<select>` is not unlike a React component and is a good place to start learning about the nature of a React component.
+An HTML `<select>` is not unlike a React component and is a good place to start when learning about the nature of a React component.
 
 Below is an HTML `<select>` element that encapsulates child HTML `<option>` elements. Hopefully the creation and functionality of a `<select>` is already familiar.
 
@@ -22,9 +22,9 @@ Let's now create our own drop-down, `<select>` like UI component using React.
 
 ## Defining a React component
 
-Below I am creating a `<MySelect>` React component by invoking the `React.createClass` function in order to create a `MySelect` component class.
+Below I am creating a UI component by invoking the `React.createClass` function in order to create a `MySelect` React component.
 
-As you can see the `MySelect` component is made up of an empty styled React `<div>` node element.
+As you can see, the `MySelect` component is made up of some styles and an empty React `<div>` node element.
 
 ```js
 var MySelect = React.createClass({ //define MySelect component
@@ -42,7 +42,7 @@ var MySelect = React.createClass({ //define MySelect component
 
 That `<div>` is an HTML like tag, yes in JavaScript, called [JSX](https://facebook.github.io/jsx/). JSX is an optional custom JavaScript syntax used by React to express React nodes that map to real HTML elements and text nodes. React nodes, defined using JSX should not be considered a one to one match to HTML elements. There are [differences](https://facebook.github.io/react/docs/dom-differences.html) and some [gotchas](https://facebook.github.io/react/docs/jsx-gotchas.html).
 
-JSX syntax must be transformed from JSX to real JavaScript in order to be parsed by ES5 browsers. The above code, if not transformed would of course cause a JavaScript error.
+JSX syntax must be transformed from JSX to real JavaScript in order to be parsed by ES5 JS engines. The above code, if not transformed would of course cause a JavaScript error.
 
 The official tool used to transform JSX to actual JavaScript code is called [Babel](http://babeljs.io/).
 
@@ -58,7 +58,7 @@ instead of this:
 return <div style={mySelectStyle}></div>;
 ```
 
-For now, just keep in mind that when you see HTML in React code it is/must be  transformed into actual JavaScript code by Babel, along with any ES6 syntax.
+For now, just keep in mind that when you see HTML in React code, eventually it must be transformed into real JavaScript code by Babel, along with any ES6 syntax.
 
 The `<MySelect>` component at this point consist of an empty React `<div>` node element. Thats a rather trivial component, so let's change that.
 
@@ -94,27 +94,27 @@ var MyOption = React.createClass({  //define MyOption component
 
 You should note how the `<MyOption>` component is used inside of the `<MySelect>` component and that both are created using JSX.
 
-## Passing Component Options Using React props
+## Passing Component Options Using React attributes/props
 
 Notice that the `<MyOption>` component is made up of one `<div>` containing the expression `{this.props.value}`. The `{}` brackets indicate to JSX that a JavaScript expression is being used. In other words, inside of `{}` you can write JavaScript.
 
-The `{}` brackets are used to gain access (i.e. `this.props.value`) to the properties or attributes passed by the `<MyOption>` component. In other words, when the `<MyOption>` component is rendered the `value` option, passed using an HTML-like attribute (i.e. `value="Volvo"`), will be placed into the `<div>`. These HTML looking attributes are consider React props. React uses them to pass stateless/immutable options into components. In this case we are simply passing the value prop to the `<MyOption>` component.
+The `{}` brackets are used to gain access (i.e. `this.props.value`) to the properties or attributes passed by the `<MyOption>` component. In other words, when the `<MyOption>` component is rendered the `value` option, passed using an HTML-like attribute (i.e. `value="Volvo"`), will be placed into the `<div>`. These HTML looking attributes are consider React attributes/props. React uses them to pass stateless/immutable options into components. In this case we are simply passing the `value` prop to the `<MyOption>` component. Not unlike how an argument is passed to a JavaScript function.
 
 ## Rendering a component to the Virtual DOM, then HTML DOM
 
 At this point our JavaScript only defines two React Components. We have yet to actually render these components to the Virtual DOM and thus to the HTML DOM.
 
-Before we do that I'd like to mention that up to this point all we have done is define two React components using JavaScript. In theory, the JavaScript we have so far is just the definition of a UI component. It does strictly have to go into a DOM or even a Virtual DOM. This same definition, in theory, could also be used to render this component to a [native mobile platform](https://github.com/facebook/react-native) or an [HTML canvas](https://github.com/Flipboard/react-canvas). But we're not going to do that, even though one could do that. Just be aware that React is a pattern for organizing a UI that can transcend the DOM, front-end applications, and [even the web platform](https://facebook.github.io/react/docs/top-level-api.html#reactdomserver).
+Before we do that I'd like to mention that up to this point all we have done is define two React components using JavaScript. In theory, the JavaScript we have so far is just the definition of a UI component. It doesn't strictly have to go into a DOM, or even a Virtual DOM. This same definition, in theory, could also be used to render this component to a [native mobile platform](https://github.com/facebook/react-native) or an [HTML canvas](https://github.com/Flipboard/react-canvas). But we're not going to do that, even though one could do that. Just be aware that React is a pattern for organizing a UI that can transcend the DOM, front-end applications, and [even the web platform](https://facebook.github.io/react/docs/top-level-api.html#reactdomserver).
 
 Let's now render the `<MySelect>` component to the virtual DOM which in turn will render it to the actual DOM inside of an HTML page.
 
-In the JavaScript below notice I added a call to the `ReactDOM.render()` function on the last line. Here I am passing the `ReactDOM.render()`  function the component we want to render (i.e. `<MySelect>`) and a reference to the HTML element already in the DOM (i.e. `<div id="app"></div>`) where I want to render my React `<MySelect>` component. Click on the "Result" tab and you will see our custom React `<MySelect>` component rendered to the HTML DOM.
+In the JavaScript below notice I added a call to the `ReactDOM.render()` function on the last line. Here I am passing the `ReactDOM.render()`  function the component we want to render (i.e. `<MySelect>`) and a reference to the HTML element already in the HTML DOM (i.e. `<div id="app"></div>`) where I want to render my React `<MySelect>` component. Click on the "Result" tab and you will see our custom React `<MySelect>` component rendered to the HTML DOM.
 
 [source code](https://jsfiddle.net/zp86ez31/#tabs=js,result,html,resources)
 
 Hold up, you might be thinking. We haven't actually re-created a `<select>` at all. All we have done is create a static/stateless list of text. We'll fix that next.
 
-Before I move on I want to point out that no implicit DOM interactions we're written to get the `<MyOption>` component into the real DOM. In other words, no jQuery code was invoke during the creation of this component. The dealings with the actual DOM have all been abstracted by the React virtual DOM.
+Before I move on I want to point out that no implicit DOM interactions we're written to get the `<MySelect>` component into the real DOM. In other words, no jQuery code was invoke during the creation of this component. The dealings with the actual DOM have all been abstracted by the React virtual DOM.
 
 ## Using React state
 
@@ -122,7 +122,7 @@ In order for our `<MySelect>` component to mimic a native `<select>` element we 
 
 State typically gets involved when a component contains snapshots of information. In regards to our custom `<MyOption>` component, it's state is the currently selected text or the fact that no text is selected at all. Note that state will typically involved user events (i.e. mouse, keyboard, clipboard etc.. ) or network events (i.e. AJAX) and is the value used to determine when the UI needs to be re-rendered (i.e. when value changes re-render).
 
-State is typically found on the top most component which makes up a UI component. Using the React `getInitialState()` function we can set the default state of our component to `false` (i.e. nothing selected) by returning a state object when `getInitialState` is invoked (i.e. `return {selected: false};`). The `getInitialState` lifecycle method gets invoked once before the component is mounted. The return value will be used as teh intial value of `this.state`.
+State is typically found on the top most component which makes up a UI component. Using the React `getInitialState()` function we can set the default state of our component to `false` (i.e. nothing selected) by returning a state object when `getInitialState` is invoked (i.e. `return {selected: false};`). The `getInitialState` lifecycle method gets invoked once before the component is mounted. The return value will be used as the initial value of `this.state`.
 
 I've update the code below accordingly to add state to the component. As I am making updates to the code, make sure you read the JavaScript comments which call attention to the changes in the code.
 

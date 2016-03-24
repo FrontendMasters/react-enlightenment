@@ -1,6 +1,6 @@
 # React Semantics
 
-Before I enlighten anyone with the mechanics of React I'd first like to define a few terms so as to grease the learning process. 
+Before I enlighten anyone with the mechanics of React I'd first like to define a few terms so as to grease the learning process.
 
 Below I list the most common terms, and their definitions, used when talking about React.
 
@@ -40,7 +40,7 @@ JSX is an optional XML-like syntax extension to ECMAScript that can be used to d
 
 ***
 
-#### Props (i.e. HTML attributes, custom attributes, `data-*`, and `aria-*`)
+#### React attributes/props
 
 
 ***
@@ -63,12 +63,3 @@ React nodes (i.e. element and text nodes) are the primary object type in React a
 
 #### Virtual DOM
 A JavaScript tree of React elements/components that is used for efficient re-rendering (i.e. diffing via JavaScript) of the browser DOM.
-
-
-
-
-
-
-
-
-
