@@ -42,6 +42,19 @@ JSX is an optional XML-like syntax extension to ECMAScript that can be used to d
 
 #### React attributes/props
 
+In one sense you can think of props as the configuration options for React nodes and in another sense you can think of them as HTML attributes.
+
+Props take on several roles:
+
+1. Props can become HTML attributes.
+2. Props become values stored in a `prop` object as a property of `React.createElement()` instances (i.e. `this.props.[NAME OF PROP]`).
+3. A few special props have side effects (e.g. [`key`](https://facebook.github.io/react/docs/multiple-components.html#dynamic-children), [`ref`](https://facebook.github.io/react/docs/more-about-refs.html), and [`dangerouslySetInnerHTML`](https://facebook.github.io/react/tips/dangerously-set-inner-html.html))
+
+***
+
+#### React component
+
+A React component is created by calling `React.createClass()`. This function takes an object of options that is used to configure and create a React component.
 
 ***
 
