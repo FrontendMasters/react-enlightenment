@@ -54,13 +54,13 @@ Props take on several roles:
 
 #### React component
 
-A React component is created by calling `React.createClass()`. This function takes an object of options that is used to configure and create a React component.
+A React component is created by calling `React.createClass()` (or, `React.Component` if using ES6 classes). This function takes an object of options that is used to configure and create a React component. The most common configuration open is a `render` function that returns React nodes/JSX. Thus, you can think of a React component as an abstraction containing one or more React nodes.
 
 ***
 
 #### React element nodes (aka `ReactElement`)
 
-An HTML or custom HTML element node representation in the Virtual DOM created using `React.createElement('div');`.
+An HTML or custom HTML element node representation in the Virtual DOM created using `React.createElement();`.
 
 ***
 
