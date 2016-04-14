@@ -20,7 +20,7 @@ The 6th edition of the ECMAScript standard. AKA JavaScript 2015. The ECMAScript 
 ***
 
 #### ECMAScript 2016
-Name of the specification that will provide updates to the JavaScript language in 2016. This edition of ECMAScript is still working towards being finalization.
+Name of the specification that will provide updates to the JavaScript language in 2016.
 
 ***
 
