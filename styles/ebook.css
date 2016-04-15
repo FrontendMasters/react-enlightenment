@@ -8,3 +8,12 @@ cite{
 .page-inner ul, .page-inner ol {
 	margin-bottom:15px !important;
 }
+
+.book .book-body .page-wrapper .page-inner section.normal hr {
+    height: 1px;
+    padding: 0;
+    margin: 0.7em 0;
+    overflow: hidden;
+    background-color: #e7e7e7;
+    border: none;
+}
