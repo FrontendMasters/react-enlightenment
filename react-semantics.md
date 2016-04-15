@@ -19,7 +19,7 @@ The 6th edition of the ECMAScript standard. AKA JavaScript 2015. The ECMAScript 
 
 ***
 
-#### ECMAScript 2016
+#### ECMAScript 2016 (aka ES7)
 Name of the specification that will provide updates to the JavaScript language in 2016.
 
 ***
@@ -37,6 +37,14 @@ A function that generates a React element node with a particular type property.
 
 #### JSX
 JSX is an optional XML-like syntax extension to ECMAScript that can be used to define an HTML-like tree structure in a JavaScript file. The JSX expressions in a JavaScript file must be transformed to JavaScript syntax before a JavaScript engine can parse the file. Babel is typically used, and recommended for transforming JSX expressions.
+
+***
+
+#### Node.js
+
+***
+
+#### npm
 
 ***
 
@@ -76,3 +84,7 @@ React nodes (i.e. element and text nodes) are the primary object type in React a
 
 #### Virtual DOM
 A JavaScript tree of React elements/components that is used for efficient re-rendering (i.e. diffing via JavaScript) of the browser DOM.
+
+***
+
+#### Webpack
