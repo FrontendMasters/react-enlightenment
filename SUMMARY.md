@@ -25,7 +25,7 @@
 * [Basic React Components](basic-react-components.md)
     * [What is a React Component](basic-react-components/4.1.md)
     * [Creating Components](basic-react-components/4.2.md)
-	* [Components Return One Branch](basic-react-components/4.3.md)
+	* [Components Return One Starting Node](basic-react-components/4.3.md)
 	* [Creating State-less Components](basic-react-components/4.4.md)
 	* [Component API](basic-react-components/4.5.md)
 * [React Props & State](react-props&state.md)
