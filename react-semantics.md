@@ -9,6 +9,16 @@ Babel is a generic multi-purpose compiler for JavaScript. Using Babel you can us
 
 ***
 
+#### Component specifications
+
+
+***
+
+#### Component life cycle methods
+
+
+***
+
 #### ES5
 he 5th edition of the ECMAScript standard. The ECMAScript 5.1 edition was finalized on June 2011.
 
@@ -26,12 +36,6 @@ Name of the specification that will provide updates to the JavaScript language i
 
 #### ES\*
 Used to represent the current version of JavaScript as well as potential future versions that can written today using tools like Babel. When you see "ES*" it more than likely means you'll find uses of ES5, ES6, and ES7 together.
-
-***
-
-#### Factories
-
-A function that generates a React element node with a particular type property.
 
 ***
 
@@ -62,7 +66,19 @@ Props take on several roles:
 
 #### React component
 
-A React component is created by calling `React.createClass()` (or, `React.Component` if using ES6 classes). This function takes an object of options that is used to configure and create a React component. The most common configuration open is a `render` function that returns React nodes/JSX. Thus, you can think of a React component as an abstraction containing one or more React nodes.
+A React component is created by calling `React.createClass()` (or, `React.Component` if using ES6 classes). This function takes an object of options that is used to configure and create a React component. The most common configuration open is a `render` function that returns React nodes/JSX. Thus, you can think of a React component as an abstraction containing one or more React nodes/components.
+
+***
+
+#### React node factories
+
+A function that generates a React element node with a particular type property.
+
+***
+
+#### React stateless function component
+
+
 
 ***
 

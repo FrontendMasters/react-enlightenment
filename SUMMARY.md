@@ -23,7 +23,7 @@
     * [Using inline CSS in JSX](react-jsx/3.6.md)
     * [Defining JSX attributes/props](react-jsx/3.7.md)
 * [Basic React components](basic-react-components.md)
-    * [What is a React component](basic-react-components/4.1.md)
+    * [What is a React component?](basic-react-components/4.1.md)
     * [Creating components](basic-react-components/4.2.md)
 	* [Return one starting node/component](basic-react-components/4.3.md)
 	* [Creating stateless function components](basic-react-components/4.4.md)
