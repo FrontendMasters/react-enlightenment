@@ -9,13 +9,15 @@ Babel is a generic multi-purpose compiler for JavaScript. Using Babel you can us
 
 ***
 
-#### Component specifications
+#### Component configuration options (aka "component specifications")
 
+The configuration arguments passed (as an object) to the `React.createClass()` function resulting in an instance of a statefull React component.
 
 ***
 
 #### Component life cycle methods
 
+A sub group, semantically called out, from all of the component configuration options (i.e. `componentWillUnmount`, `componentDidUpdate`, `componentWillUpdate`, `shouldComponentUpdate`, `componentWillReceiveProps`, `componentDidMount`, `componentWillMount`). These various methods are executed at specific points in a component's lifecycle.
 
 ***
 
