@@ -9,6 +9,11 @@ Babel is a generic multi-purpose compiler for JavaScript. Using Babel you can us
 
 ***
 
+#### Babel Cli
+The npm packages that provides Babel and the Cli tool used to compile files from the command line.
+
+***
+
 #### Component configuration options (aka "component specifications")
 
 The configuration arguments passed (as an object) to the `React.createClass()` function resulting in an instance of a statefull React component.
@@ -21,12 +26,18 @@ A sub group, semantically called out, from all of the component configuration op
 
 ***
 
-#### ES5
-he 5th edition of the ECMAScript standard. The ECMAScript 5.1 edition was finalized on June 2011.
+#### Document Object Model (aka DOM)
+
+"The Document Object Model (DOM) is a programming interface for HTML, XML and SVG documents. It provides a structured representation of the document as a tree. The DOM defines methods that allow access to the tree, so that they can change the document structure, style and content. The DOM provides a representation of the document as a structured group of nodes and objects, possessing various properties and methods. Nodes can also have event handlers attached to them, and once an event is triggered, the event handlers get executed. Essentially, it connects web pages to scripts or programming languages." - [MSD](https://developer.mozilla.org/en-US/docs/Web/API/Document_Object_Model)
 
 ***
 
-#### ES6
+#### ES5
+The 5th edition of the ECMAScript standard. The ECMAScript 5.1 edition was finalized on June 2011.
+
+***
+
+#### ES6/ES 2015
 The 6th edition of the ECMAScript standard. AKA JavaScript 2015. The ECMAScript 6th edition was finalized on June 2015.
 
 ***
@@ -47,10 +58,12 @@ JSX is an optional XML-like syntax extension to ECMAScript that can be used to d
 ***
 
 #### Node.js
+An open-source, cross-platform runtime environment for writing JavaScript. The runtime environment interprets JavaScript using Google's V8 JavaScript engine.
 
 ***
 
 #### npm
+The package manager for JavaScript, specifically Node.js.
 
 ***
 
@@ -100,9 +113,16 @@ React nodes (i.e. element and text nodes) are the primary object type in React a
 
 ***
 
+#### React
+An open source JavaScript library for writing declarative, efficient, and flexible user interfaces.
+
+***
+
 #### Virtual DOM
 A JavaScript tree of React elements/components that is used for efficient re-rendering (i.e. diffing via JavaScript) of the browser DOM.
 
 ***
 
 #### Webpack
+
+A module loader and bundler that takes modules (.js, .css, .txt, etc...) with dependencies and generates static assets representing those modules.

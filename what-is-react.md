@@ -8,7 +8,7 @@ I could ramble on trying to express in words what React is, but I think it  best
 
 An HTML `<select>` is not unlike a React component and is a good place to start when learning about the nature of a React component.
 
-Below is an HTML `<select>` element that encapsulates child HTML `<option>` elements. Hopefully the creation and functionality of a `<select>` is already familiar.
+Below is an HTML `<select>` element that encapsulates child HTML `<option>` elements. Hopefully the creation and functionality of an HTML `<select>` is already familiar.
 
 [source code](https://jsfiddle.net/s2pxp36L/#tabs=html,result)
 
@@ -153,6 +153,8 @@ var MyOption = React.createClass({
         return <div>{this.props.value}</div>;
     }
 });
+
+ReactDOM.render(<MySelect />, document.getElementById('app'));
 ```
 
 With the default state set, next we'll add a callback function called `select` that gets called when a user clicks on an option. Inside of this function we get the text of the option (via `event` parameter) that was selected and use that to determine how to `setState` on the current component. Notice that I am using `event` details passed to the `select` callback. This pattern should look familiar if you've had any experience with jQuery.
@@ -191,6 +193,8 @@ var MyOption = React.createClass({
         return <div>{this.props.value}</div>;
     }
 });
+
+ReactDOM.render(<MySelect />, document.getElementById('app'));
 ```
 
 In order for our `<MyOption>` components to gain access to the `select` function we'll have to pass a reference to it, via props, from the `<MySelect>` component to the `<MyOption>` component. To do this we add `select={this.select}` to the `<MyOption>` components.
@@ -231,6 +235,8 @@ var MyOption = React.createClass({
         return <div onClick={this.props.select}>{this.props.value}</div>;
     }
 });
+
+ReactDOM.render(<MySelect />, document.getElementById('app'));
 ```
 
 By doing all this we can now set the state by clicking on one of the options. In other words, when you click on an option the `select` function will now run and set the state of the `MySelect` component. However, the user of the component has no idea this is being done because all we have done is update our code so that state is managed by the component. At this point we have no feedback visually that anything is selected. Let's fix that.
