@@ -5,12 +5,12 @@ Before I enlighten anyone with the mechanics of React I'd first like to define a
 Below I list the most common terms, and their definitions, used when talking about React.
 
 #### Babel
-Babel is a generic multi-purpose compiler for JavaScript. Using Babel you can use (and create) the next generation of JavaScript, as well as the next generation of JavaScript tooling. Babel is the tool of choice from the React team for writing future ES* and transforming JSX to ES5 code.
+Babel transforms JavaScript ES\* (i.e. JS 2016, 2016, 2017) to ES5. Babel is the tool of choice from the React team for writing future ES* and transforming JSX to ES5 code.
 
 ***
 
 #### Babel Cli
-The npm packages that provides Babel and the Cli tool used to compile files from the command line.
+Babel comes with a CLI tool, called Babel CLI, that can be used to compile files from the command line.
 
 ***
 
@@ -63,7 +63,7 @@ An open-source, cross-platform runtime environment for writing JavaScript. The r
 ***
 
 #### npm
-The package manager for JavaScript, specifically Node.js.
+The package manager for JavaScript born from the Node.js community.
 
 ***
 

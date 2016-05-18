@@ -1,6 +1,6 @@
 # What is React?
 
-React is a JavaScript tool that makes it easy to reason about, construct, and maintain stateless and stateful user interfaces. It provides the means to declaratively define and divide a UI into UI components (aka React components) made up of HTML like nodes (aka React nodes).
+React is a JavaScript tool developed by Facebook that makes it easy to reason about, construct, and maintain stateless and stateful user interfaces. It provides the means to declaratively define and divide a UI into UI components (aka React components) defined with HTML like nodes called React nodes. React nodes eventually get transformed into a format for UI rendering (e.g. HTML/DOM, canvas , svg etc...).
 
 I could ramble on trying to express in words what React is, but I think it  best to just show you. What follows is a whirl wind tour of React and React components from thirty thousand feet. Don't try and figure out all the details yet as I describe React in this section. Just follow along grabbing a hold of the big concepts for now.
 
