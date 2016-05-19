@@ -26,7 +26,7 @@
     * [What is a React component?](basic-react-components/6.1.md)
     * [Creating components](basic-react-components/6.2.md)
 	* [Return one starting node/component](basic-react-components/6.3.md)
-	* [Creating stateless function components](basic-react-components/6.6.md)
+	* [Creating stateless function components](basic-react-components/6.4.md)
 	* [Referring to a component instance](basic-react-components/6.5.md)
 	* [Using the component API](basic-react-components/6.6.md)
 	* [Getting a components props](basic-react-components/6.7.md)
