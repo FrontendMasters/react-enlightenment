@@ -35,7 +35,7 @@
     * [What are props?](/7.1.md)
     * [What is state?](/7.2.md)
     * [Props v.s. state](/7.3.md)
-* [React Props](react-state.md)
+* [React State](react-state.md)
     * [What are props?](/8.1.md)
     * [What is state?](/8.2.md)
     * [Props v.s. state](/8.3.md)
