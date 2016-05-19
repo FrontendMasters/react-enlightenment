@@ -34,7 +34,7 @@
 	* [Getting props](react-props/7.3.md)
 	* [Setting default props](react-props/7.4.md)
 	* [Validating props](react-props/7.5.md)
-	* [Props more than strings?](react-props/7.6.md)
+	* [Props more than strings](react-props/7.6.md)
 	* [Transferring props](react-props/7.7.md)
 * [React State](react-state/react-state.md)
     * [What is state?](react-state/8.1.md)
