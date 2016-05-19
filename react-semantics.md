@@ -5,28 +5,28 @@ Before I enlighten anyone with the mechanics of React I'd first like to define a
 Below I list the most common terms, and their definitions, used when talking about React.
 
 #### Babel
-Babel transforms JavaScript ES\* (i.e. JS 2016, 2016, 2017) to ES5. Babel is the tool of choice from the React team for writing future ES* and transforming JSX to ES5 code.
+Babel transforms JavaScript ES\* (i.e., JS 2016, 2016, 2017) to ES5. Babel is the tool of choice from the React team for writing future ES* and transforming JSX to ES5 code.
 
 ***
 
-#### Babel Cli
+#### Babel CLI
 Babel comes with a CLI tool, called Babel CLI, that can be used to compile files from the command line.
 
 ***
 
-#### Component configuration options (aka "component specifications")
+#### Component Configuration Options (a.k.a., "Component Specifications")
 
 The configuration arguments passed (as an object) to the `React.createClass()` function resulting in an instance of a statefull React component.
 
 ***
 
-#### Component life cycle methods
+#### Component Life Cycle Methods
 
-A sub group, semantically called out, from all of the component configuration options (i.e. `componentWillUnmount`, `componentDidUpdate`, `componentWillUpdate`, `shouldComponentUpdate`, `componentWillReceiveProps`, `componentDidMount`, `componentWillMount`). These various methods are executed at specific points in a component's lifecycle.
+A sub group, semantically called out, from all of the component configuration options (i.e., `componentWillUnmount`, `componentDidUpdate`, `componentWillUpdate`, `shouldComponentUpdate`, `componentWillReceiveProps`, `componentDidMount`, `componentWillMount`). These various methods are executed at specific points in a component's lifecycle.
 
 ***
 
-#### Document Object Model (aka DOM)
+#### Document Object Model (a.k.a., DOM)
 
 "The Document Object Model (DOM) is a programming interface for HTML, XML and SVG documents. It provides a structured representation of the document as a tree. The DOM defines methods that allow access to the tree, so that they can change the document structure, style and content. The DOM provides a representation of the document as a structured group of nodes and objects, possessing various properties and methods. Nodes can also have event handlers attached to them, and once an event is triggered, the event handlers get executed. Essentially, it connects web pages to scripts or programming languages." - [MSD](https://developer.mozilla.org/en-US/docs/Web/API/Document_Object_Model)
 
@@ -38,11 +38,11 @@ The 5th edition of the ECMAScript standard. The ECMAScript 5.1 edition was final
 ***
 
 #### ES6/ES 2015
-The 6th edition of the ECMAScript standard. AKA JavaScript 2015. The ECMAScript 6th edition was finalized on June 2015.
+The 6th edition of the ECMAScript standard, a.k.a., JavaScript 2015. The ECMAScript 6th edition was finalized on June 2015.
 
 ***
 
-#### ECMAScript 2016 (aka ES7)
+#### ECMAScript 2016 (a.k.a., ES7)
 Name of the specification that will provide updates to the JavaScript language in 2016.
 
 ***
@@ -67,49 +67,49 @@ The package manager for JavaScript born from the Node.js community.
 
 ***
 
-#### React attributes/props
+#### React Attributes/Props
 
 In one sense you can think of props as the configuration options for React nodes and in another sense you can think of them as HTML attributes.
 
 Props take on several roles:
 
 1. Props can become HTML attributes.
-2. Props become values stored in a `prop` object as a property of `React.createElement()` instances (i.e. `this.props.[NAME OF PROP]`).
-3. A few special props have side effects (e.g. [`key`](https://facebook.github.io/react/docs/multiple-components.html#dynamic-children), [`ref`](https://facebook.github.io/react/docs/more-about-refs.html), and [`dangerouslySetInnerHTML`](https://facebook.github.io/react/tips/dangerously-set-inner-html.html))
+2. Props become values stored in a prop object as a property of `React.createElement()` instances (i.e., `this.props.[NAME OF PROP]`).
+3. A few special props have side effects (e.g., [`key`](https://facebook.github.io/react/docs/multiple-components.html#dynamic-children), [`ref`](https://facebook.github.io/react/docs/more-about-refs.html), and [`dangerouslySetInnerHTML`](https://facebook.github.io/react/tips/dangerously-set-inner-html.html))
 
 ***
 
-#### React component
+#### React Component
 
 A React component is created by calling `React.createClass()` (or, `React.Component` if using ES6 classes). This function takes an object of options that is used to configure and create a React component. The most common configuration open is a `render` function that returns React nodes/JSX. Thus, you can think of a React component as an abstraction containing one or more React nodes/components.
 
 ***
 
-#### React node factories
+#### React Node Factories
 
 A function that generates a React element node with a particular type property.
 
 ***
 
-#### React stateless function component
+#### React Stateless Function Component
 
 
 
 ***
 
-#### React element nodes (aka `ReactElement`)
+#### React Element Nodes (a.k.a., `ReactElement`)
 
 An HTML or custom HTML element node representation in the Virtual DOM created using `React.createElement();`.
 
 ***
 
-#### React text nodes (aka `ReactText`)
+#### React Text Nodes (a.k.a., `ReactText`)
 A text node representation in the Virtual DOM created using `React.createElement('div',null,'a text node');`.
 
 ***
 
-#### React nodes
-React nodes (i.e. element and text nodes) are the primary object type in React and can be created using `React.createElement('div');`. In other words React nodes are objects that represent DOM nodes and children DOM nodes. They are a light, stateless, immutable, virtual representation of a DOM node.
+#### React Nodes
+React nodes (i.e., element and text nodes) are the primary object type in React and can be created using `React.createElement('div');`. In other words React nodes are objects that represent DOM nodes and children DOM nodes. They are a light, stateless, immutable, virtual representation of a DOM node.
 
 ***
 
@@ -119,10 +119,10 @@ An open source JavaScript library for writing declarative, efficient, and flexib
 ***
 
 #### Virtual DOM
-A JavaScript tree of React elements/components that is used for efficient re-rendering (i.e. diffing via JavaScript) of the browser DOM.
+A JavaScript tree of React elements/components that is used for efficient re-rendering (i.e., diffing via JavaScript) of the browser DOM.
 
 ***
 
 #### Webpack
 
-A module loader and bundler that takes modules (.js, .css, .txt, etc...) with dependencies and generates static assets representing those modules.
+A module loader and bundler that takes modules (.js, .css, .txt, etc.) with dependencies and generates static assets representing those modules.

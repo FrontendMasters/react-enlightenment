@@ -1,4 +1,4 @@
-# JavaScript syntax extension (aka JSX)
+# JavaScript Syntax Extension (a.k.a., JSX)
 
 In the previous chapter we learned how to create React nodes using plain ES5 JavaScript code. In this chapter we look at creating React nodes using the JSX syntax extension.
 

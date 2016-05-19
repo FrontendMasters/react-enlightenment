@@ -10,7 +10,7 @@
 * [React Nodes](react-nodes.md)
     * [What is a React node?](react-nodes/2.1.md)
     * [Creating React nodes](react-nodes/2.2.md)
-    * [Defining React node attributes (aka props)](react-nodes/2.3.md)
+    * [Defining React node attributes (a.k.a., props)](react-nodes/2.3.md)
     * [Using React node element factories](react-nodes/2.4.md)
 * [JSX](react-jsx.md)
     * [What is a JSX?](react-jsx/3.1.md)
@@ -49,7 +49,7 @@
 
 * React namespace
 * React.createClass (define react component using JSX)
-* React.createElement (create react elements / i.e. DOM)
+* React.createElement (create react elements, i.e., DOM)
 * ReactDOM.render (place react elements into actual DOM via virtual DOM)
 * Using {} in JSX
 * Props (how data is passed down the tree via attributes and child nodes)
@@ -58,8 +58,8 @@
 
 * Custom elements
 * Composable Components / tree of components / component hierarchy
-* Controller components i.e. top-level branch components
-* JSX (an XML’ish like HTML written in JS)
+* Controller components, i.e., top-level branch components
+* JSX (an XML-ish like HTML written in JS)
 * Virtual DOM
 * React is safe. We are not generating HTML strings so XSS protection is the default.
 * Separate rendering options of which DOM is one
