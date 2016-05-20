@@ -2,15 +2,15 @@
 
 Written by [Cody Lindley](http://codylindley.com/) sponsored by — [Frontend Masters](https://frontendmasters.com/)
 
-Learn React in the terse cookbook style found with previous Enlightenment titles (i.e. [jQuery Enlightenment](http://jqueryenlightenment.com/), [JavaScript Enlightenment](http://javascriptenlightenment.com/), [DOM Enlightenment](http://domenlightenment.com/))
+Learn React in the terse cookbook style found with previous Enlightenment titles (i.e., [jQuery Enlightenment](http://jqueryenlightenment.com/), [JavaScript Enlightenment](http://javascriptenlightenment.com/), [DOM Enlightenment](http://domenlightenment.com/))
 
 ***
 
-**download a .pdf, .epub, or .mobi file from**:
+**Download a .pdf, .epub, or .mobi file from**:
 
 * [https://www.gitbook.com/book/frontendmasters/react-enlightenment/details](https://www.gitbook.com/book/frontendmasters/react-enlightenment/details)
 
-**contribute content, suggestions, and fixes on github**:
+**Contribute content, suggestions, and fixes on GitHub**:
 
 * [https://github.com/FrontendMasters/react-enlightenment](https://github.com/FrontendMasters/react-enlightenment)
 

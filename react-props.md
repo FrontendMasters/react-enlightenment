@@ -1,3 +1,3 @@
-# React nodes
+# React Nodes
 
-This section will discuss component properties (aka props).
+This section will discuss component properties (a.k.a., props).
