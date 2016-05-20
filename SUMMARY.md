@@ -30,7 +30,7 @@
 	* [Referring to a Component Instance](basic-react-components/6.5.md)
 * [React Component Props](react-props.md)
     * [What Are Component Props?](react-props/7.1.md)
-	* [Setting Component Props](react-props/7.2.md)
+	* [Sending Component Props](react-props/7.2.md)
 	* [Getting Component Props](react-props/7.3.md)
 	* [Setting Default Component Props](react-props/7.4.md)
 	* [Validating Component Props](react-props/7.5.md)
