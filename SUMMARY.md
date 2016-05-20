@@ -17,7 +17,7 @@
 * [JavaScript Syntax Extension (a.k.a., JSX)](react-jsx.md)
     * [What Is a JSX?](react-jsx/5.1.md)
     * [Creating React Nodes With JSX](react-jsx/5.2.md)
-    * [Rendering JSX to DOM](react-jsx/5.5.md)
+    * [Rendering JSX to DOM](react-jsx/5.3.md)
     * [Using JS Expressions in JSX](react-jsx/5.4.md)
     * [Using JS Comments in JSX](react-jsx/5.5.md)
     * [Using Inline CSS in JSX](react-jsx/5.6.md)
