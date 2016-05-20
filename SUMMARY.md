@@ -11,7 +11,7 @@
     * [What Is a React Node?](react-nodes/4.1.md)
     * [Creating React Nodes](react-nodes/4.4.md)
     * [Rendering to DOM](react-nodes/4.3.md)
-    * [Defining Attributes/Props](react-nodes/4.4.md)
+	* [Defining Attributes/Props](react-nodes/4.4.md)
     * [Inlining CSS on Element Nodes](react-nodes/4.5.md)
     * [Using Element Factories](react-nodes/4.6.md)
 * [JavaScript Syntax Extension (a.k.a., JSX)](react-jsx.md)
