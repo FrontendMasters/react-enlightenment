@@ -42,4 +42,4 @@
 	* [Getting State](react-state/8.3.md)
 	* [Setting Initial State](react-state/8.4.md)
     * [State vs. Props](react-state/8.5.md)
-* [Advanced React components](advanced-react-components.md)
+* [Advanced React Components](advanced-react-components.md)
