@@ -59,7 +59,7 @@
 * Custom elements
 * Composable Components / tree of components / component hierarchy
 * Controller components i.e., top-level branch components
-* JSX (an XML’ish like HTML written in JS)
+* JSX (an XML-ish like HTML written in JS)
 * Virtual DOM
 * React is safe. We are not generating HTML strings so XSS protection is the default.
 * Separate rendering options of which DOM is one
