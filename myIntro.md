@@ -1,6 +1,6 @@
 # React Enlightenment [DRAFT]
 
-Learn React in the terse cookbook style found with previous Enlightenment titles (i.e. [jQuery Enlightenment](http://jqueryenlightenment.com/), [JavaScript Enlightenment](http://javascriptenlightenment.com/), [DOM Enlightenment](http://domenlightenment.com/))
+Learn React in the terse cookbook style found with previous Enlightenment titles (i.e., [jQuery Enlightenment](http://jqueryenlightenment.com/), [JavaScript Enlightenment](http://javascriptenlightenment.com/), [DOM Enlightenment](http://domenlightenment.com/))
 
 ***
 
