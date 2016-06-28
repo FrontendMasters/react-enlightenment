@@ -32,6 +32,7 @@
 	* [Referring to a Component Instance](basic-react-components/6.5.md)
 	* [Defining Events on Components](basic-react-components/6.6.md)
 	* [Composing Components](basic-react-components/6.7.md)
+	* [Accessing Child Components/Nodes](basic-react-components/6.8.md)
 * [React Component Props](react-props.md)
     * [What Are Component Props?](react-props/7.1.md)
 	* [Sending Component Props](react-props/7.2.md)
