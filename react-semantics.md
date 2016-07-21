@@ -5,7 +5,7 @@ Before I enlighten anyone with the mechanics of React I'd first like to define a
 Below I list the most common terms, and their definitions, used when talking about React.
 
 #### Babel
-Babel transforms JavaScript ES\* (i.e., JS 2016, 2016, 2017) to ES5. Babel is the tool of choice from the React team for writing future ES* and transforming JSX to ES5 code.
+Babel transforms JavaScript ES\* (i.e., JS 2016, 2016, 2017) to ES5. Babel is the tool of choice from the React team for writing future ES* code and transforming JSX to ES5 code.
 
 ***
 
@@ -16,13 +16,13 @@ Babel comes with a CLI tool, called Babel CLI, that can be used to compile files
 
 #### Component Configuration Options (a.k.a, "Component Specifications")
 
-The configuration arguments passed (as an object) to the `React.createClass()` function resulting in an instance of a statefull React component.
+The configuration arguments passed (as an object) to the `React.createClass()` function resulting in an instance of a  React component.
 
 ***
 
 #### Component Life Cycle Methods
 
-A sub group, semantically called out, from all of the component configuration options (i.e., `componentWillUnmount`, `componentDidUpdate`, `componentWillUpdate`, `shouldComponentUpdate`, `componentWillReceiveProps`, `componentDidMount`, `componentWillMount`). These various methods are executed at specific points in a component's lifecycle.
+A sub group of component events, semantically separated from the other component configuration options (i.e., `componentWillUnmount`, `componentDidUpdate`, `componentWillUpdate`, `shouldComponentUpdate`, `componentWillReceiveProps`, `componentDidMount`, `componentWillMount`). These various methods are executed at specific points in a component's existences.
 
 ***
 
@@ -81,7 +81,7 @@ Props take on several roles:
 
 #### React Component
 
-A React component is created by calling `React.createClass()` (or, `React.Component` if using ES6 classes). This function takes an object of options that is used to configure and create a React component. The most common configuration open is a `render` function that returns React nodes/JSX. Thus, you can think of a React component as an abstraction containing one or more React nodes/components.
+A React component is created by calling `React.createClass()` (or, `React.Component` if using ES6 classes). This function takes an object of options that is used to configure and create a React component. The most common configuration option is the `render` function which returns React nodes. Thus, you can think of a React component as an abstraction containing one or more React nodes/components.
 
 ***
 
@@ -92,8 +92,6 @@ A function that generates a React element node with a particular type property.
 ***
 
 #### React Stateless Function Component
-
-
 
 ***
 
