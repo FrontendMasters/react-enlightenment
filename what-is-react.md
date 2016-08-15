@@ -315,13 +315,13 @@ ReactDOM.render(React.createElement(MySelect, null), document.getElementById('ap
 
 ## Understanding the role of the Virtual DOM
 
-I'm going to end this this whirl wind tour where most people typically start talking about React. I'll finished off this article by talking about the merits of the React virtual DOM.
+I'm going to end this this whirl wind tour where most people typically start talking about React. I'll finish off this article by talking about the merits of the React virtual DOM.
 
 Hopefully you notice the only interaction with the real DOM we had during the creation of our custom select UI is when we told the `ReactDOM.render()` function where to render our UI component in the HTML page (i.e., render it to `<div id="app"></div>`). This might just be the only interaction you ever have with the real DOM when building out a React application from a tree of React components. And here in lies much of the value of React. By using React, you really don't ever have to think about the DOM like you once did when you were writing jQuery code. React replaces jQuery, as a complete DOM abstraction, by removing most if not all implicit DOM interactions from your code. Of course, that's not the only benefit, or even the best benefit.
 
 Because the DOM has been completely abstracted by the Virtual DOM this allows for a heavy handed performance pattern of updating the real DOM when state is changed. The Virtual DOM keeps track of UI changes based on state and props, then compares that to the real DOM, and then makes only the minimal changes required to update the UI. In other words, the real DOM is only ever patch with the minimal changes needed when state or props change.
 
-Seeing these performat updates in real time will often clarify any confusion about the performant DOM diffing. Look at the animated image below showcasing the usage (i.e., changing state) of the UI component we created in this chapter.
+Seeing these performant updates in real time will often clarify any confusion about the performant DOM diffing. Look at the animated image below showcasing the usage (i.e., changing state) of the UI component we created in this chapter.
 
 ![](images/XFEJxkXPVs.gif "images/XFEJxkXPVs.gif")
 
