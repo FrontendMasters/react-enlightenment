@@ -1,10 +1,14 @@
 # React Enlightenment [DRAFT]
 
-Learn React in the terse cookbook style found with previous Enlightenment titles (i.e., [jQuery Enlightenment](http://jqueryenlightenment.com/), [JavaScript Enlightenment](http://javascriptenlightenment.com/), [DOM Enlightenment](http://domenlightenment.com/)).
+Written by [Cody Lindley](http://codylindley.com/) sponsored by — [Frontend Masters](https://frontendmasters.com/)
 
-React Enlightenment instructs squarely on the basic principles of React code removing any additional tool noise from the topic. 
+Learn React in the terse cookbook style found with previous Enlightenment titles (i.e., [jQuery Enlightenment](http://jqueryenlightenment.com/), [JavaScript Enlightenment](http://javascriptenlightenment.com/), [DOM Enlightenment](http://domenlightenment.com/))
 
 ***
+
+**Read Online At**: 
+
+* [reactenlightenment.com](http://www.reactenlightenment.com/)
 
 **download a .pdf, .epub, or .mobi file from**:
 
