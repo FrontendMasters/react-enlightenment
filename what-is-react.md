@@ -2,7 +2,7 @@
 
 React is a JavaScript tool that makes it easy to reason about, construct, and maintain stateless and stateful user interfaces. It provides the means to declaratively define and divide a UI into UI components (a.k.a., React components) using HTML-like nodes called React nodes. React nodes eventually get transformed into a format for UI rendering (e.g., HTML/DOM, canvas, svg, etc...).
 
-I could ramble on trying to express in words what React is, but I think it  best to just show you. What follows is a whirlwind tour of React and React components from thirty thousand feet. Don't try and figure out all the details yet as I describe React in this section. The entire book is meant to unwrap the details showcased in the follow overview. Just follow along grabbing a hold of the big concepts for now.
+I could ramble on trying to express in words what React is, but I think it  best to just show you. What follows is a whirlwind tour of React and React components from thirty thousand feet. Don't try and figure out all the details yet as I describe React in this section. The entire book is meant to unwrap the details showcased in the following overview. Just follow along grabbing a hold of the big concepts for now.
 
 ## Using React to create UI components similar to a `<select>`
 
@@ -40,7 +40,7 @@ var MySelect = React.createClass({ //define MySelect component
 });
 ```
 
-That `<div>` is an HTML like tag, yes in JavaScript, called [JSX](https://facebook.github.io/jsx/). JSX is an optional custom JavaScript syntax used by React to express React nodes that can map to real HTML elements, custome elements, and text nodes. React nodes, defined using JSX should not be considered a one to one match to HTML elements. There are [differences](https://facebook.github.io/react/docs/dom-differences.html) and some [gotchas](https://facebook.github.io/react/docs/jsx-gotchas.html).
+That `<div>` is an HTML-like tag, yes in JavaScript, called [JSX](https://facebook.github.io/jsx/). JSX is an optional custom JavaScript syntax used by React to express React nodes that can map to real HTML elements, custom elements, and text nodes. React nodes, defined using JSX should not be considered a one to one match to HTML elements. There are [differences](https://facebook.github.io/react/docs/dom-differences.html) and some [gotchas](https://facebook.github.io/react/docs/jsx-gotchas.html).
 
 JSX syntax must be transformed from JSX to real JavaScript in order to be parsed by ES5 JS engines. The above code, if not transformed would of course cause a JavaScript error.
 
@@ -58,7 +58,7 @@ instead of this:
 return <div style={mySelectStyle}></div>;
 ```
 
-For now, just keep in mind that when you HTML like tags in React code, eventually it must be transformed into real JavaScript code by Babel, along with any ES6 syntax.
+For now, just keep in mind that when you write HTML-like tags in React code, eventually it must be transformed into real JavaScript code by Babel, along with any ES6 syntax.
 
 The `<MySelect>` component at this point consist of an empty React `<div>` node element. Thats a rather trivial component, so let's change that.
 
