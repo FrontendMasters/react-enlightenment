@@ -114,7 +114,7 @@ Click on the "Result" tab and you will see our custom React `<MySelect>` compone
 
 > [source code](https://jsfiddle.net/zp86ez31/#tabs=js,result,html,resources)
 
-Note that all I did was tell React where to start rendering components and which component to start with. React will then render any children components (i.e. `<MyOption>`) contained within the starting component (i.e. `<MySelect>`).
+Note that all I did was tell React where to start rendering components and which component to start with. React will then render any children components (i.e., `<MyOption>`) contained within the starting component (i.e., `<MySelect>`).
 
 Hold up, you might be thinking. We haven't actually re-created a `<select>` at all. All we have done is create a static/stateless list of text. We'll fix that next.
 
@@ -253,7 +253,7 @@ Using props, again, we will pass the `selected` state from the `<MySelect>` comp
 
 Make sure you click on the "Result" tab above and use the custom React select component to verify the new functioning.
 
-While our React UI select component is not as pretty or feature complete as one might hope, I think you can see still where all this is going. React is a tool that can help you reason about, construct, and maintain stateless and stateful UI components, in a structure tree (i.e. a tree of components).
+While our React UI select component is not as pretty or feature complete as one might hope, I think you can see still where all this is going. React is a tool that can help you reason about, construct, and maintain stateless and stateful UI components, in a structure tree (i.e., a tree of components).
 
 Before moving on to the role of the virtual DOM I do want to stress that you don't have to use JSX and Babel. One can always bypass these tools and just write strait JavaScript. Below, I'm showing the final state of the code after the JSX has been transformed by Babel. If you choose not to use JSX, then you'll have to write the following code yourself instead of the code I've written throughout this section.
 
