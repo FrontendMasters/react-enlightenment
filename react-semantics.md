@@ -85,6 +85,12 @@ A React component is created by calling `React.createClass()` (or, `React.Compon
 
 ***
 
+#### React Element Nodes (a.k.a., `ReactElement`)
+
+An HTML or custom HTML element node representation in the Virtual DOM created using `React.createElement();`.
+
+***
+
 #### React Node Factories
 
 A function that generates a React element node with a particular type property.
@@ -93,11 +99,15 @@ A function that generates a React element node with a particular type property.
 
 #### React Stateless Function Component
 
-***
+When a component is purely a result of props alone, no state, the component can be written as a pure function avoiding the need to create a React component instance.
 
-#### React Element Nodes (a.k.a., `ReactElement`)
+```
+var MyComponent = function(props){
+	return <div>Hello {props.name}</div>;
+};
 
-An HTML or custom HTML element node representation in the Virtual DOM created using `React.createElement();`.
+ReactDOM.render(<MyComponent name="doug" />, app);
+```
 
 ***
 
