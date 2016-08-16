@@ -73,8 +73,8 @@ In one sense you can think of props as the configuration options for React nodes
 
 Props take on several roles:
 
-1. Props can become HTML attributes.
-2. Props become values stored in a `prop` object as a property of `React.createElement()` instances (i.e., `this.props.[NAME OF PROP]`).
+1. Props can become HTML attributes. If a prop matches a known HTML attribute then it will be added to the final HTML element in the DOM.
+2. Props passed to `createElement()` become values stored in a `prop` object as an instance property of `React.createElement()` instances  (i.e., `[INSTANCE].props.[NAME OF PROP]`). Props by enlarge are used to input values into components.
 3. A few special props have side effects (e.g., [`key`](https://facebook.github.io/react/docs/multiple-components.html#dynamic-children), [`ref`](https://facebook.github.io/react/docs/more-about-refs.html), and [`dangerouslySetInnerHTML`](https://facebook.github.io/react/tips/dangerously-set-inner-html.html))
 
 ***
