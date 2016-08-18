@@ -98,7 +98,7 @@ You should note how the `<MyOption>` component is used inside of the `<MySelect>
 
 Notice that the `<MyOption>` component is made up of one `<div>` containing the expression `{this.props.value}`. The `{}` brackets indicate to JSX that a JavaScript expression is being used. In other words, inside of `{}` you can write JavaScript.
 
-The `{}` brackets are used to gain access (i.e., `this.props.value`) to the properties or attributes passed by the `<MyOption>` component. In other words, when the `<MyOption>` component is rendered the `value` option, passed using an HTML-like attribute (i.e., `value="Volvo"`), will be placed into the `<div>`. These HTML looking attributes are consider React attributes/props. React uses them to pass stateless/immutable options into components. In this case we are simply passing the `value` prop to the `<MyOption>` component. Not unlike how an argument is passed to a JavaScript function. And in fact that is exactly what is going on behind the JSX.
+The `{}` brackets are used to gain access (i.e., `this.props.value`) to the properties or attributes passed by the `<MyOption>` component. In other words, when the `<MyOption>` component is rendered the `value` option, passed using an HTML-like attribute (i.e., `value="Volvo"`), will be placed into the `<div>`. These HTML looking attributes are considered React attributes/props. React uses them to pass stateless/immutable options into components. In this case we are simply passing the `value` prop to the `<MyOption>` component. Not unlike how an argument is passed to a JavaScript function. And in fact that is exactly what is going on behind the JSX.
 
 ## Rendering a component to the Virtual DOM, then HTML DOM
 
