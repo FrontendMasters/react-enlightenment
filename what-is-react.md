@@ -313,7 +313,7 @@ ReactDOM.render(React.createElement(MySelect, null), document.getElementById('ap
 
 ## Understanding the role of the Virtual DOM
 
-I'm going to end this this whirl wind tour where most people typically start talking about React. I'll finish off this React overview by talking about the merits of the React virtual DOM.
+I'm going to end this whirl wind tour where most people typically start talking about React. I'll finish off this React overview by talking about the merits of the React virtual DOM.
 
 Hopefully you notice the only interaction with the real DOM we had during the creation of our custom select UI is when we told the `ReactDOM.render()` function where to render our UI component in the HTML page (i.e., render it to `<div id="app"></div>`). This might just be the only interaction you ever have with the real DOM when building out a React application from a tree of React components. And here in lies much of the value of React. By using React, you really don't ever have to think about the DOM like you once did when you were writing jQuery code. React replaces jQuery, as a complete DOM abstraction, by removing most if not all implicit DOM interactions from your code. Of course, that's not the only benefit, or even the best benefit.
 
