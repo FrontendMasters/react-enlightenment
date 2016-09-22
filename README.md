@@ -1,4 +1,4 @@
-# React Enlightenment [DRAFT]
+# React Enlightenment
 
 Written by [Cody Lindley](http://codylindley.com/) sponsored by — [Frontend Masters](https://frontendmasters.com/)
 
