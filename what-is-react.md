@@ -253,7 +253,7 @@ Make sure you click on the "Result" tab above and use the custom React select co
 
 While our React UI select component is not as pretty or feature complete as one might hope, I think you can see still where all this is going. React is a tool that can help you reason about, construct, and maintain stateless and stateful UI components, in a structure tree (i.e., a tree of components).
 
-Before moving on to the role of the virtual DOM I do want to stress that you don't have to use JSX and Babel. One can always bypass these tools and just write strait JavaScript. Below, I'm showing the final state of the code after the JSX has been transformed by Babel. If you choose not to use JSX, then you'll have to write the following code yourself instead of the code I've written throughout this section.
+Before moving on to the role of the virtual DOM I do want to stress that you don't have to use JSX and Babel. One can always bypass these tools and just write straight JavaScript. Below, I'm showing the final state of the code after the JSX has been transformed by Babel. If you choose not to use JSX, then you'll have to write the following code yourself instead of the code I've written throughout this section.
 
 ```javascript
 var MySelect = React.createClass({
