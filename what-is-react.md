@@ -122,7 +122,7 @@ Before I move on I want to point out that no implicit DOM interactions we're wri
 
 In order for our `<MySelect>` component to mimic a native `<select>` element we are going to have to add state. After all what good is a custom `<select>` element if it can't keep the state of the selection.
 
-State typically gets involved when a component contains snapshots of information. In regards to our custom `<MyOption>` component, it's state is the currently selected text or the fact that no text is selected at all. Note that state will typically involved user events (i.e., mouse, keyboard, clipboard, etc.) or network events (i.e., AJAX) and is the value used to determine when the UI needs to be re-rendered (i.e., when value changes re-render).
+State typically gets involved when a component contains snapshots of information. In regards to our custom `<MyOption>` component, it's state is the currently selected text or the fact that no text is selected at all. Note that state will typically involve user events (i.e., mouse, keyboard, clipboard, etc.) or network events (i.e., AJAX) and it's value is used to determine when the UI needs to be re-rendered (i.e., when value changes re-render).
 
 State is typically found on the top most component which makes up a UI component. Using the React `getInitialState()` function we can set the default state of our component to `false` (i.e., nothing selected) by returning a state object when `getInitialState` is invoked (i.e., `return {selected: false};`). The `getInitialState` lifecycle method gets invoked once before the component is mounted. The return value will be used as the initial value of `this.state`.
 
