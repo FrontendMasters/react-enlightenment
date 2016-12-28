@@ -73,8 +73,8 @@ In one sense you can think of props as the configuration options for React nodes
 
 Props take on several roles:
 
-1. Props can become HTML attributes.
-2. Props become values stored in a `prop` object as a property of `React.createElement()` instances (i.e., `this.props.[NAME OF PROP]`).
+1. Props can become HTML attributes. If a prop matches a known HTML attribute then it will be added to the final HTML element in the DOM.
+2. Props passed to `createElement()` become values stored in a `prop` object as an instance property of `React.createElement()` instances  (i.e., `[INSTANCE].props.[NAME OF PROP]`). Props by enlarge are used to input values into components.
 3. A few special props have side effects (e.g., [`key`](https://facebook.github.io/react/docs/multiple-components.html#dynamic-children), [`ref`](https://facebook.github.io/react/docs/more-about-refs.html), and [`dangerouslySetInnerHTML`](https://facebook.github.io/react/tips/dangerously-set-inner-html.html))
 
 ***
@@ -82,6 +82,12 @@ Props take on several roles:
 #### React Component
 
 A React component is created by calling `React.createClass()` (or, `React.Component` if using ES6 classes). This function takes an object of options that is used to configure and create a React component. The most common configuration option is the `render` function which returns React nodes. Thus, you can think of a React component as an abstraction containing one or more React nodes/components.
+
+***
+
+#### React Element Nodes (a.k.a., `ReactElement`)
+
+An HTML or custom HTML element node representation in the Virtual DOM created using `React.createElement();`.
 
 ***
 
@@ -93,11 +99,15 @@ A function that generates a React element node with a particular type property.
 
 #### React Stateless Function Component
 
-***
+When a component is purely a result of props alone, no state, the component can be written as a pure function avoiding the need to create a React component instance.
 
-#### React Element Nodes (a.k.a., `ReactElement`)
+```
+var MyComponent = function(props){
+	return <div>Hello {props.name}</div>;
+};
 
-An HTML or custom HTML element node representation in the Virtual DOM created using `React.createElement();`.
+ReactDOM.render(<MyComponent name="doug" />, app);
+```
 
 ***
 
