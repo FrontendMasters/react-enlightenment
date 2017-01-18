@@ -6,7 +6,9 @@
     "pluginsConfig": {
           "jsfiddle":{
             "type":"script",
-            "tabs":["js","result","html","resources"]
+            "tabs":["js","result","html","resources"],
+            "height": "500",
+            "width": "100%"
           }
     }
 }
