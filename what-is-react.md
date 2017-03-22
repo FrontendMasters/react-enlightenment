@@ -245,7 +245,7 @@ By doing all this we can now set the state by clicking on one of the options. In
 
 The next thing we will need to do is pass the current state down to the `<MyOption>` component so that it can respond visually to the state of the component.
 
-Using props, again, we will pass the `selected` state from the `<MySelect>` component down to the `<MyOption>` component by placing the property `state={this.state.selected}` on all of the `<MyOption>` components. Now that we know the state (i.e., `this.props.state`) and the current value (i.e., `this.props.value`) of the option we can verify if the state matches the value in a give `<MyOption>` component . If it does, we then know that this option should be selected. We do this by writing a simple `if` statement which adds a styled selected state (i.e., `selectedStyle`) to the JSX `<div>` if the state matches the value of the current option. Otherwise, we return a React element with `unSelectedStyle` styles.
+Using props, again, we will pass the `selected` state from the `<MySelect>` component down to the `<MyOption>` component by placing the property `state={this.state.selected}` on all of the `<MyOption>` components. Now that we know the state (i.e., `this.props.state`) and the current value (i.e., `this.props.value`) of the option we can verify if the state matches the value in a given `<MyOption>` component . If it does, we then know that this option should be selected. We do this by writing a simple `if` statement which adds a styled selected state (i.e., `selectedStyle`) to the JSX `<div>` if the state matches the value of the current option. Otherwise, we return a React element with `unSelectedStyle` styles.
 
 > [source code](https://jsfiddle.net/L1z9za23/#tabs=js,result,html,resources)
 
